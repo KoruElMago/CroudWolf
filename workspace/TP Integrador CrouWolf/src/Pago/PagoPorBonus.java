@@ -10,8 +10,7 @@ public class PagoPorBonus extends Pago {
 
 	private CroudWolf pagador;
 	
-	public PagoPorBonus(CroudWolf mockCroudWolf,
-			List<CondicionYMontoDePago> condiciones) {
+	public PagoPorBonus(CroudWolf pagador ,List<CondicionYMontoDePago> condiciones) {
 	
 		this.setCondiciones(condiciones);
 		this.setPagador(pagador);
@@ -26,19 +25,7 @@ public class PagoPorBonus extends Pago {
 		this.pagador = pagador;
 	}
 
-	public float calcularMonto(Worker worker) {
-		
-		float monto=0;
-		
-		for (CondicionYMontoDePago c : this.getCondiciones()) {
-			
-			monto += c.calcularMonto(worker);
-			
-			
-		}
-		
-		return monto;
-	}
+	
 
 	
 	

@@ -2,7 +2,9 @@ package Pago;
 
 import java.util.List;
 
-public class Pago {
+import Worker.Worker;
+
+public abstract class Pago {
 
 	List<CondicionYMontoDePago> condiciones;
 
@@ -14,6 +16,19 @@ public class Pago {
 		this.condiciones = condiciones;
 	}
 	
+	public float calcularMonto(Worker worker) {
+		
+		float monto=0;
+		
+		for (CondicionYMontoDePago c : this.getCondiciones()) {
+			
+			monto += c.calcularMonto(worker);
+			
+			
+		}
+		
+		return monto;
+	}
 	
 	
 	
