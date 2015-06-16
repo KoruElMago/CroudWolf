@@ -22,7 +22,7 @@ public abstract class Pago {
 		
 		for (CondicionYMontoDePago c : this.getCondiciones()) {
 			
-			monto += c.calcularMonto(worker);
+			monto += this.calcularMonto(worker,c);
 			
 			
 		}
@@ -30,6 +30,6 @@ public abstract class Pago {
 		return monto;
 	}
 	
-	
+	public abstract float calcularMonto(Worker worker,CondicionYMontoDePago c);
 	
 }
