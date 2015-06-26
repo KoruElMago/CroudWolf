@@ -2,12 +2,13 @@ package Pago;
 
 import java.util.List;
 
+import CroudWolf.CroudWolf;
 import Worker.Worker;
 
 public abstract class Pago {
 
 	List<CondicionYMontoDePago> condiciones;
-
+	CroudWolf pagador;
 	public List<CondicionYMontoDePago> getCondiciones() {
 		return condiciones;
 	}
@@ -22,14 +23,22 @@ public abstract class Pago {
 		
 		for (CondicionYMontoDePago c : this.getCondiciones()) {
 			
-			monto += this.calcularMonto(worker,c);
+			monto += c.calcularMonto(worker,this.getPagador());
 			
 			
 		}
 		
 		return monto;
 	}
+
+	private CroudWolf getPagador() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	public abstract float calcularMonto(Worker worker,CondicionYMontoDePago c);
+	public void setPagador(CroudWolf pagador){
+		this.pagador = pagador;
+	}
+	
 	
 }

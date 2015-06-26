@@ -1,7 +1,7 @@
 package TestPago;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.mock;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,18 +9,17 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import CroudWolf.CroudWolf;
 import Pago.CondicionYMontoDePago;
-import Pago.PagoPorBonus;
+import Pago.PagoPorProyecto;
+import Proyecto.Proyecto;
 import Worker.Worker;
 
+public class PagoPorProyectoTest {
 
-public class PagoPorBonusTest {
-
-	PagoPorBonus pagoTest;
+	PagoPorProyecto pagoTest;
 	CondicionYMontoDePago mockCondicion1;
 	CondicionYMontoDePago mockCondicion2;
-	CroudWolf mockCroudWolf;
+	Proyecto mockProyecto;
 	List<CondicionYMontoDePago> condiciones;
 	Worker mockWorker;
 	
@@ -29,14 +28,14 @@ public class PagoPorBonusTest {
 		
 		mockCondicion1 = mock(CondicionYMontoDePago.class);
 		mockCondicion2 = mock(CondicionYMontoDePago.class);
-		mockCroudWolf = mock(CroudWolf.class);
+		mockProyecto = mock(Proyecto.class);
 		mockWorker = mock(Worker.class);
 		
 		condiciones = new ArrayList<CondicionYMontoDePago>();
 		condiciones.add(mockCondicion1);
 		condiciones.add(mockCondicion2);
 		
-		pagoTest = new PagoPorBonus(mockCroudWolf,condiciones);
+		pagoTest = new PagoPorProyecto(mockProyecto,condiciones);
 		
 	}
 
@@ -46,13 +45,4 @@ public class PagoPorBonusTest {
 		assertNotNull(pagoTest.getPagador());
 	}
 	
-	@Test
-	public void testCalcularMonto(){
-		
-		pagoTest.calcularMonto(mockWorker);
-	
-		verify(mockCondicion1).calcularMonto(mockWorker);
-		verify(mockCondicion2).calcularMonto(mockWorker);
-	}
-
 }
