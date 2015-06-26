@@ -1,14 +1,21 @@
 package Pago;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import CroudWolf.CroudWolf;
 import Worker.Worker;
 
-public abstract class Pago {
+public class Pago {
 
 	List<CondicionYMontoDePago> condiciones;
 	CroudWolf pagador;
+	
+	
+	public Pago (CroudWolf croudwolf){
+		this.setPagador(croudwolf);
+		this.setCondiciones(new ArrayList<CondicionYMontoDePago>());
+	}
 	public List<CondicionYMontoDePago> getCondiciones() {
 		return condiciones;
 	}
@@ -32,8 +39,7 @@ public abstract class Pago {
 	}
 
 	private CroudWolf getPagador() {
-		// TODO Auto-generated method stub
-		return null;
+		return pagador;
 	}
 	
 	public void setPagador(CroudWolf pagador){

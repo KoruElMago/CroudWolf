@@ -1,29 +1,38 @@
+package Proyecto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import CroudWolf.CroudWolf;
+import PerfilWorker.PerfilDelWorker;
+import Tarea.Tarea;
+import Worker.Worker;
+
 
 public class Proyecto {
 	
 	private ArrayList<Tarea> tareas;
 	private ArrayList<String> temasDeInteres;
-	private String nombre;
+	private String nombre1;
 	private String descripcion;
 	private PerfilDelWorker perfilWorker;
 	
 	
 	
-	public Proyecto new(String nombre, String descripcion){
-		this.setNombre(nombre);
+	public Proyecto (String nombre, String descripcion){
+		this.setNombre(nombre1);
 		this.setDescripcion(descripcion);
-		this.avisarProyecto(p)	
 	}
 
 	
 	
 	
-	public agregarTarea(Tarea t){
-		this.getTareas.add(t);
+	public void agregarTarea(Tarea t){
+		this.getTareas().add(t);
 	}
 	
-	public agregarTarea(List<Tarea> t){
-		this.getTareas.add(t)
+	public void agregarTarea(List<Tarea> t){
+		this.getTareas().add(t);
 	}
 	
 	public void agregarTemaDeInteres(String t){
@@ -34,44 +43,40 @@ public class Proyecto {
 		w.asignarTareas(this.proximoPaqueteTareas());
 	}
 	
-	public void solicitarMasTareas(Worker w){
-		//
-		w.agregarTarea(this.darTareaDisponible());
-	}
+	
 
 	public Tarea tareaDisponible() {
 		return this.tareasDisponibles().first();
 	}
 
 	private List<Tarea> tareasDisponibles2() {
-		rs = ArrayList<Tarea>;
-		for (Tarea t : this.getTareas){
-			if(t.esTareaDisponible()){
-				rs.addd(t);
+		List <Tarea>rs = new ArrayList<Tarea>();
+		for (Tarea t : this.getTareas()){
+			if(t.esaDisponible()){
+				rs.add(t);
 			}
 		}
 		return rs;
 	}
 	
-	public list<Tarea> tareasCompletas(){
-		return tareasCompletas2();
-	}
 	
-	private List<Tarea> tareasCompletas2(){
-		rs = ArrayList<Tarea>;
-		for (Tarea t : this.getTareas){
-			if(t.esTareaCompleta()){
-				rs.addd(t);
+	
+	private List<Tarea> tareasCompletas(){
+		List<Tarea>rs = new ArrayList<Tarea>();
+		for (Tarea t : this.getTareas()){
+			if(t.estaCompleta()){
+				rs.add(t);
 			}
 		}
+		return rs;
 	}
 
-	public list<Tarea> tareasIncompletas(){
+	public List<Tarea> tareasIncompletas(){
 		return tareasIncompletas2();
 	}
 	
 	private List<Tarea> tareasIncompletas2(){
-		rs = ArrayList<Tarea>;
+		rs = ArrayList<Tarea>();
 		for (Tarea t : this.getTareas){
 			if(t.esTareaIncompleta()){
 				rs.addd(t);
@@ -82,19 +87,85 @@ public class Proyecto {
 	//getters y setters
 
 	private void setNombre(String nombre){
-		this.nombre = nombre;
+		this.nombre1 = nombre;
 	}
 	
 	private void setDescripcion(String descripcion){
 		this.descripcion = descripcion;
 	}
 	
-	private ArrayList<Tarea> getTareas(){
-		return this.Tareas;
+	private List<Tarea> getTareas(){
+		return tareas;
 	}
 	
-	private void setPerfilDelWorker(PerfilDeWorker pdw){
+	private void setPerfilDelWorker(PerfilDelWorker pdw){
 		this.perfilWorker = pdw;
 	}
+
+	
+	// Implementar !!!!!
+	public CroudWolf getCroudWolf() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	public ArrayList<String> getTemasDeInteres() {
+		return temasDeInteres;
+	}
+
+
+
+
+	public void setTemasDeInteres(ArrayList<String> temasDeInteres) {
+		this.temasDeInteres = temasDeInteres;
+	}
+
+
+
+
+	public String getNombre1() {
+		return nombre1;
+	}
+
+
+
+
+	public void setNombre1(String nombre1) {
+		this.nombre1 = nombre1;
+	}
+
+
+
+
+	public PerfilDelWorker getPerfilWorker() {
+		return perfilWorker;
+	}
+
+
+
+
+	public void setPerfilWorker(PerfilDelWorker perfilWorker) {
+		this.perfilWorker = perfilWorker;
+	}
+
+
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+
+
+	public void setTareas(ArrayList<Tarea> tareas) {
+		this.tareas = tareas;
+	}
+	
+	
+	
 
 }
