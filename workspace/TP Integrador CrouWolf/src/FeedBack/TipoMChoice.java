@@ -15,7 +15,7 @@ public abstract class TipoMChoice {
 			feedBack.setEstado(new EstFeedBackCorrecto());
 		}
 		else{
-			feedBack.setEstado(new EstFeecBackIncorrecta());
+			feedBack.setEstado(new EstFeedBackIncorrecto());
 		}
 	}
 

@@ -1,5 +1,6 @@
 package Tarea;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import CroudWolf.CroudWolf;
@@ -12,9 +13,9 @@ public class PaqueteDeTareas {
 	CroudWolf croudwolf;
 	
 
-	public PaqueteDeTareas(Proyecto p, List<Tarea> tareas){
+	public PaqueteDeTareas(Proyecto p){
 		this.setProyecto(p);
-		this.setTareas(tareas);
+		this.setTareas(new ArrayList<Tarea>());
 	}
 	
 	public void completarTarea(){

@@ -4,24 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 import CroudWolf.CroudWolf;
+import CroudWolf.TemaDeInteres;
 import PerfilWorker.PerfilDelWorker;
+import Tarea.PaqueteDeTareas;
 import Tarea.Tarea;
 import Worker.Worker;
 
 
 public class Proyecto {
 	
-	private ArrayList<Tarea> tareas;
-	private ArrayList<String> temasDeInteres;
+	private List<Tarea> tareas;
+	private List<TemaDeInteres> temasDeInteres;
 	private String nombre1;
 	private String descripcion;
 	private PerfilDelWorker perfilWorker;
+	private CroudWolf croudWolf;
+	private Integer tamanhoPaquetes;
+	private List<Worker> subscriptos;
 	
 	
 	
-	public Proyecto (String nombre, String descripcion){
-		this.setNombre(nombre1);
+	public Proyecto (String nombre, String descripcion, CroudWolf cw, PerfilDelWorker pdw){
+		this.setNombre(nombre);
 		this.setDescripcion(descripcion);
+		this.setTamanhoPaquetes(1); //por defecto sera uno, se podra cambiar en todo caso.
+		this.setCroudWolf(cw);
+		this.setTareas(new ArrayList<Tarea>());
+		this.setTemasDeInteres(new ArrayList<TemaDeInteres>());
+		this.setPerfilDelWorker(pdw);
+		this.setSubscriptos(new ArrayList<Worker>());
 	}
 
 	
@@ -32,36 +43,33 @@ public class Proyecto {
 	}
 	
 	public void agregarTarea(List<Tarea> t){
-		this.getTareas().add(t);
+		this.getTareas().addAll(t);
 	}
 	
-	public void agregarTemaDeInteres(String t){
+	public void agregarTemaDeInteres(TemaDeInteres t){
 		this.temasDeInteres.add(t);
 	}
-	
-	public void solicitarMasTareas(Worker w){
-		w.asignarTareas(this.proximoPaqueteTareas());
+
+	private PaqueteDeTareas proximoPaqueteDeTareas(){
+		return (new PaqueteDeTareas(this));
 	}
 	
-	
-
-	public Tarea tareaDisponible() {
-		return this.tareasDisponibles().first();
+	//Asumo que el worker esta dentro del proyecto
+	public void solicitarNuevoPaqueteDeTareas(Worker w){
+		w.asignarPaqueteDeTareas(this.proximoPaqueteDeTareas());
 	}
 
-	private List<Tarea> tareasDisponibles2() {
+	public List<Tarea> tareasDisponibles() {
 		List <Tarea>rs = new ArrayList<Tarea>();
 		for (Tarea t : this.getTareas()){
-			if(t.esaDisponible()){
+			if(t.estaDisponible()){
 				rs.add(t);
 			}
 		}
 		return rs;
 	}
 	
-	
-	
-	private List<Tarea> tareasCompletas(){
+	public List<Tarea> tareasCompletas(){
 		List<Tarea>rs = new ArrayList<Tarea>();
 		for (Tarea t : this.getTareas()){
 			if(t.estaCompleta()){
@@ -70,18 +78,19 @@ public class Proyecto {
 		}
 		return rs;
 	}
-
-	public List<Tarea> tareasIncompletas(){
-		return tareasIncompletas2();
-	}
 	
-	private List<Tarea> tareasIncompletas2(){
-		rs = ArrayList<Tarea>();
-		for (Tarea t : this.getTareas){
+	public List<Tarea> tareasIncompletas(){
+		List<Tarea> rs = new ArrayList<Tarea>();
+		for (Tarea t : this.getTareas()){
 			if(t.esTareaIncompleta()){
-				rs.addd(t);
+				rs.add(t);
 			}
 		}
+		return rs;
+	}
+	
+	public void agregarSubscripto(Worker w){
+		this.getSubscriptos().add(w);
 	}
 
 	//getters y setters
@@ -94,32 +103,25 @@ public class Proyecto {
 		this.descripcion = descripcion;
 	}
 	
-	private List<Tarea> getTareas(){
+	public List<Tarea> getTareas(){
 		return tareas;
 	}
 	
-	private void setPerfilDelWorker(PerfilDelWorker pdw){
+	public void setPerfilDelWorker(PerfilDelWorker pdw){
 		this.perfilWorker = pdw;
 	}
 
-	
-	// Implementar !!!!!
-	public CroudWolf getCroudWolf() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 
-
-	public ArrayList<String> getTemasDeInteres() {
+	public List<TemaDeInteres> getTemasDeInteres() {
 		return temasDeInteres;
 	}
 
 
 
 
-	public void setTemasDeInteres(ArrayList<String> temasDeInteres) {
+	public void setTemasDeInteres(List<TemaDeInteres> temasDeInteres) {
 		this.temasDeInteres = temasDeInteres;
 	}
 
@@ -131,27 +133,9 @@ public class Proyecto {
 	}
 
 
-
-
-	public void setNombre1(String nombre1) {
-		this.nombre1 = nombre1;
-	}
-
-
-
-
 	public PerfilDelWorker getPerfilWorker() {
 		return perfilWorker;
 	}
-
-
-
-
-	public void setPerfilWorker(PerfilDelWorker perfilWorker) {
-		this.perfilWorker = perfilWorker;
-	}
-
-
 
 
 	public String getDescripcion() {
@@ -165,7 +149,36 @@ public class Proyecto {
 		this.tareas = tareas;
 	}
 	
+	public int getTamanhoPaquetes(){
+		return tamanhoPaquetes;
+	}
 	
+	public void setTamanhoPaquetes(Integer i){
+		tamanhoPaquetes = i;
+	}
+
+
+
+
+	public List<Worker> getSubscriptos() {
+		return subscriptos;
+	}
+
+
+
+
+	public void setSubscriptos(List<Worker> subscriptos) {
+		this.subscriptos = subscriptos;
+	}
+	
+	
+	public CroudWolf getCroudWolf() {
+		return croudWolf;		
+	}
+
+	public void setCroudWolf(CroudWolf cw){
+		croudWolf = cw;
+	}
 	
 
 }

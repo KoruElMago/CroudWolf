@@ -5,7 +5,8 @@ public class RespuestasMChoice {
 	boolean valor;
 	String respuesta;
 
-	public void RespuestaMChoice(String respuesta, boolean valor){
+	
+	public RespuestasMChoice (String respuesta, boolean valor){
 		this.setRespuesta(respuesta);
 		this.setValor(valor);
 		

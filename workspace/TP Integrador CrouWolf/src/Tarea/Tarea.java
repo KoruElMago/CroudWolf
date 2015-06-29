@@ -12,4 +12,19 @@ public class Tarea {
 		return false;
 	}
 
+	public boolean estaCorrecta() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean esTareaIncompleta() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean estaDisponible() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

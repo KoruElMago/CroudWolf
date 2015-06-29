@@ -12,9 +12,9 @@ public class Pago {
 	CroudWolf pagador;
 	
 	
-	public Pago (CroudWolf croudwolf){
+	public Pago (CroudWolf croudwolf, List<CondicionYMontoDePago> condiciones){
 		this.setPagador(croudwolf);
-		this.setCondiciones(new ArrayList<CondicionYMontoDePago>());
+		this.setCondiciones(condiciones);
 	}
 	public List<CondicionYMontoDePago> getCondiciones() {
 		return condiciones;
@@ -30,7 +30,7 @@ public class Pago {
 		
 		for (CondicionYMontoDePago c : this.getCondiciones()) {
 			
-			monto += c.calcularMonto(worker,this.getPagador());
+			monto += c.calcularMonto(worker);
 			
 			
 		}
@@ -38,7 +38,7 @@ public class Pago {
 		return monto;
 	}
 
-	private CroudWolf getPagador() {
+	public CroudWolf getPagador() {
 		return pagador;
 	}
 	

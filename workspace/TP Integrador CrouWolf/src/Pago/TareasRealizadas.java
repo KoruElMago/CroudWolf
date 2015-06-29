@@ -1,18 +1,19 @@
 package Pago;
 
-import Worker.Worker;
+import Tarea.Tarea;
 
 public class TareasRealizadas extends CondicionYMontoDePago {
 
+	public TareasRealizadas(Float valor) {
+		super(valor);
+	}
 
 	@Override
-	public float calcularMonto(Worker worker) {
-		
-		float res;
-		
-		
-		
-		return ;
+	public boolean chequearCondicion(Tarea t) {
+		return t.estaCompleta();
 	}
+
+	
+
 
 }

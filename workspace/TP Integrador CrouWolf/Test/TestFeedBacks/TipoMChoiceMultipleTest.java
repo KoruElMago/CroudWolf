@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import FeedBack.EstFeedBackCorrecto;
+import FeedBack.EstFeedBackIncorrecto;
 import FeedBack.FeedBack;
 import FeedBack.RespuestasMChoice;
 import FeedBack.TipoMChoiceMultiple;
@@ -46,5 +47,16 @@ public class TipoMChoiceMultipleTest {
 		verify(respuesta).esCorrecta();
 		verify(respuesta2).esCorrecta();
 		verify(feedBack).setEstado(new EstFeedBackCorrecto());
+	}
+	@Test
+	public void testValidarIncorrectamente(){
+		mchoice.elegirRespuesta(respuesta);
+		mchoice.elegirRespuesta(respuesta2);
+		when(respuesta.esCorrecta()).thenReturn(false);
+		when(respuesta2.esCorrecta()).thenReturn(false);
+		mchoice.validar(feedBack);
+		verify(respuesta).esCorrecta();
+		verify(respuesta2).esCorrecta();
+		verify(feedBack).setEstado(new EstFeedBackIncorrecto());
 	}
 }
