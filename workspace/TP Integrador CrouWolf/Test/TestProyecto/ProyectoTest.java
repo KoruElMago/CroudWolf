@@ -77,10 +77,9 @@ public class ProyectoTest {
 	}
 	
 	@Test
-	//Este test no pasa, como corno podriamos hacer
 	public void testSolicitarNuevoPaqueteDeTareas(){
 		proyectoT.solicitarNuevoPaqueteDeTareas(mockWorker);
-		verify(mockWorker).asignarPaqueteDeTareas(new PaqueteDeTareas(proyectoT));
+		verify(mockWorker, times(1)).asignarPaqueteDeTareas(new PaqueteDeTareas(proyectoT));
 	}
 
 	@Test
