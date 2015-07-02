@@ -2,7 +2,7 @@ package FeedBack;
 
 import java.util.ArrayList;
 
-public class TipoMChoiceMultiple extends TipoMChoice {
+public class TipoMChoiceMultiple extends TipoChoice {
 
 
 	public TipoMChoiceMultiple(){

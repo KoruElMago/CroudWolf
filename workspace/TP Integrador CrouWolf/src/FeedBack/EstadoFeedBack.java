@@ -10,4 +10,8 @@ public class EstadoFeedBack {
 	public boolean estaValidada() {
 		return true;
 	}
+	
+	public boolean esCorrecta(){
+		return false;
+	}
 }

@@ -9,11 +9,11 @@ public class FeedBackMChoice extends FeedBack{
 	private List<RespuestasMChoice> respuestas; 
 	//respuestas validas para esta pregunta
 	
-	private TipoMChoice tipo;
+	private TipoChoice tipo;
 	//Es el tipo de Multiple choice que es la diferencia entre ellos es 
 	//basicamente la cantidad de respuestas puede tomar y como chequea si es correcta 
 	
-	public FeedBackMChoice(String pregunta, List<RespuestasMChoice> respuestas, TipoMChoice tipo,EstadoFeedBack estado){
+	public FeedBackMChoice(String pregunta, List<RespuestasMChoice> respuestas, TipoChoice tipo,EstadoFeedBack estado){
 	
 		this.setEstado(estado);
 		this.setPregunta(pregunta);
@@ -45,11 +45,11 @@ public class FeedBackMChoice extends FeedBack{
 		this.respuestas = respuestas;
 	}
 
-	public TipoMChoice getTipo() {
+	public TipoChoice getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(TipoMChoice tipo) {
+	public void setTipo(TipoChoice tipo) {
 		this.tipo = tipo;
 	}
 	
