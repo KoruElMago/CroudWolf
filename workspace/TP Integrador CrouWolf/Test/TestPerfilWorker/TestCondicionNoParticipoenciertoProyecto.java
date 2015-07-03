@@ -18,9 +18,6 @@ package TestPerfilWorker
 	 Proyecto mockProyecto;
 	 Worker mockWorker;
 	 
-	 @Before
-	 public void setUp(){
-
 	 @before
 	 public void setUp() throws exeption{
 		mockProyecto = mock(Proyecto.class);
