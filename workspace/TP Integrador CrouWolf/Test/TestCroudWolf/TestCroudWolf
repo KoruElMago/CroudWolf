@@ -14,7 +14,7 @@ import Tarea.PaqueteDeTareas;
 import Worker.Worker;
 public class CroudWolfTest {
 
-	
+	TemaDeInteres tema1;
 	CroudWolf croudWolf1 ;
 	Proyecto  proyecto1;
 	Pago 	pago1; 
@@ -32,7 +32,7 @@ public class CroudWolfTest {
 		pago1 = mock(Pago.class);
 		worker1 = mock (Worker.class);
 		paquete1 = mock (PaqueteDeTareas.class);
- 
+ 		tema1 = mock (TemaDeInteres.class);
  
  	
 
@@ -42,6 +42,14 @@ public class CroudWolfTest {
 	public void testCreador() {
 		assertNotNull(croudWolf1.getWorkers());
 		assertNotNull(croudWolf1.getProyectos());
+		assertEquals(cdoudWolf1.getTemasDeInteres()).size(),0);
+	}
+	
+	@Test
+	public void testAgregarTemas() {
+		croudWolf1.agregarTemaDeInteres(tema1);
+		assertEquals(croudWolf1.getTemasDeInteres().size(),1);
+		assertTrue(croudWolf1.getTemasDeInteres().contains(tema1));
 	}
 	
 	@Test
