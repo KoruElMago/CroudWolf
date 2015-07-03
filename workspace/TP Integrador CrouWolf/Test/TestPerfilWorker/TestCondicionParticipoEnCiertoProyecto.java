@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-import PerfilWorker.CondicionNoParticipoEnCiertoProyecto;
+import PerfilWorker.CondicionParticipoEnCiertoProyecto;
 import Proyecto.Proyecto;
 import Worker.Worker;
 package TestPerfilWorker
@@ -14,19 +14,15 @@ package TestPerfilWorker
  public class TestCondicionParticipoEnCiertoProyecto{
 	 
 	 //variables
-	 CondicionNoParticipoEnCiertoProyecto condicion;
+	 CondicionParticipoEnCiertoProyecto condicion;
 	 Worker mockWorker;
 	 Proyecto mockProyecto;
-	 
-	 @Before
-	 public void setUp() {
-	 CondicionParticipoEnCiertoProyecto condicion;
-	 
+
 	 @before
 	 public void setUp() throws exeption{
 		mockProyecto = mock(Proyecto.class);
 		mockWorker = mock(Worker.class);
-		condicion = new CondicionNoParticipoEnCiertoProyecto(mockProyecto);	 
+		condicion = new CondicionParticipoEnCiertoProyecto(mockProyecto);	 
 	 }
 	 
 	 
