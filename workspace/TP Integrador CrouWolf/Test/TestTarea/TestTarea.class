@@ -3,39 +3,51 @@ package Tarea;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
-
+import Feedback.Feedback;
 import org.mockito.Mockito;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 public class TestTarea {
 
-	Tarea tarea1 = new Tarea("Apretar Click",feedback1);
-	tarea1.estaCompleta();
-	tarea1.estaCorrecta();
-	
+	Tarea tarea1;
+	Feedback feedback1;
 	
 	
 	
 	@Before
 	public void setUp() throws Exception {
 		
-		Feedback feedback1= mock(Feedback.class);
-		
+		feedback1= mock(Feedback.class);
+		tarea1 = new Tarea("Apretar Click",feedback1);
 	}
 	
 	
 	@Test
 	public void testCreador() {
 		assertEquals(tarea1.getInstruccion(), "Apretar Click");
+		assertNotNull(tarea1.getFecha());
+		assertNotNull(tarea1.getFeedback());
 	}
 	
 	
 	@Test
-	public void test() {
-		assertTrue(tarea1.estaDisponible());
+	public void testTareaCompleta() {
+		
 		verify(feedback1).estaCorrecta();
 		verify(feedback1).estaCompleta();
 	}
 
+	@Test
+	public void testTareaDisponible(){
+		
+		assertTrue(tarea1.estaDisponible());
+		
+	}
+	
+	@Test
+	public void testTareaCorrecta(){
+		
+		verify(feedback1).estaCorrecta();
+	}
 }
