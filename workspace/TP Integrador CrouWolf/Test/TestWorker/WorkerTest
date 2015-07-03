@@ -1,0 +1,53 @@
+package Worker;
+
+import static org.junit.Assert.*;
+import java.util.ArrayList;
+import org.junit.Before;
+import org.junit.Test;
+
+import Proyecto.Proyecto;
+
+import static org.mockito.Mockito.*;
+
+import java.util.List;
+
+public class TestWorker {
+
+	List<String> idiomas = new ArrayList<String>();
+	idiomas.add("Español");
+	
+	Worker worker1 = new Worker("Mago",55,idiomas);
+	worker1.subscribirseAProyecto(proyecto1);
+	worker1.asignarPaqueteDeTareas(paquete1);
+	worker1.recibePago(pago1);
+	
+	
+	
+	
+	
+	@Before
+	public void setUp() throws Exception {
+	
+		Proyecto 	proyecto1 = mock(Proyecto.class);
+		PaqueteDeTareas paquete1 = mock(PaqueteDeTareas.class);
+		Pago pago1 = mock(Pago.class);
+	}
+	
+
+	
+	
+	@Test
+	public void testCreador() {
+		assertNotNull(worker1.getIdiomas());
+		assertNotNull(worker1.getProyectos());
+		assertEquals(worker1.getNombre(), "Mago");
+	
+		
+	@Test
+	public void test() {
+		verify(proyecto1).agregarSubcripto(worker1);
+	    verify(paquete1).getProyecto();
+	    assertNotNull(worker1.getPagos());
+	}
+
+}
