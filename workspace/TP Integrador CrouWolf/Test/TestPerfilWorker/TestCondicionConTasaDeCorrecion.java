@@ -26,7 +26,6 @@ import static org.mockito.Mockito.*;
 		 mockWorker = mock(Worker.class);
 		 mockTarea1 = mock(Tarea.class);
 		 mockTarea2 = mock(Tarea.class);
-		 tareas.add(mockTarea1); tareas.add(mockTarea2);
 		 condicion = new CondicionConTasaDeCorreccion(75);
 		 
 		 
@@ -46,6 +45,7 @@ import static org.mockito.Mockito.*;
 	 
 	 @Test
 	 public void testFijarseTasaDeCorrecion(){
+	 	tareas.add(mockTarea1); tareas.add(mockTarea2);
 		when(mockTarea1.estaCorrecta()).thenReturn(true);
 		when(mockTarea2.estaCorrecta()).thenReturn(true);
 		assertTrue(condicion.fijarseTasaDeCorrecion(tareas));
