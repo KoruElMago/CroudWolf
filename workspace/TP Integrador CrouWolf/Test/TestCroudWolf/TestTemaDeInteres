@@ -28,7 +28,7 @@ public class TestTemaDeInteres {
 
 	
 	@Test
-	public void test testCreador() {
+	public void testCreador() {
 		
 		assertEquals(tema1.getWorkers().size(), 0);
 		assertEquals(tema1.getTema(), "Futbol");
