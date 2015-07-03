@@ -10,7 +10,6 @@ import Tarea.Tarea;
 import Worker.Worker;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-package TestPerfilWorker
 
 
  public class TestCondicionConTasaDeCorrecion{
@@ -24,18 +23,12 @@ package TestPerfilWorker
 	 
 	 @Before
 	 public void setUp() {
-	 CondicionConTasaDeCorrecion condicion;
-	 ArrayList<Tarea> tareas;
-	 
-	 @before
-	 public void setUp() throws exeption{
 		 mockWorker = mock(Worker.class);
 		 mockTarea1 = mock(Tarea.class);
 		 mockTarea2 = mock(Tarea.class);
 		 tareas.add(mockTarea1); tareas.add(mockTarea2);
 		 condicion = new CondicionConTasaDeCorreccion(75);
-		 condicion = new CondicionConTasaDeCorrecion(75);
-
+		 
 		 
 	 }
 	 
@@ -58,4 +51,3 @@ package TestPerfilWorker
 		assertTrue(condicion.fijarseTasaDeCorrecion(tareas));
 	 }
  }
-		 
