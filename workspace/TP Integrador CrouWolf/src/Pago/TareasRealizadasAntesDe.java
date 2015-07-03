@@ -12,7 +12,7 @@ public class TareasRealizadasAntesDe extends CondicionYMontoDePago{
 	
 	public TareasRealizadasAntesDe(Float valor, DateTime fecha) {
 		super(valor);
-		this.setFecha(fecha);
+		this.setFecha((new DateTime()).toDateTime());
 	}
 	
 	

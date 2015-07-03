@@ -7,6 +7,7 @@ public abstract class FeedBack {
 	private String pregunta;
 	private boolean estaValidada;
 	private boolean estaCorrecta;
+	private boolean estaCompleta;
 	
 	//Este estado es como guarda el FeedBack si fue validada y en caso de serlo si fue validado correcta o incorrectamente
 	
@@ -21,11 +22,22 @@ public abstract class FeedBack {
 	public boolean estaCorrecta(){
 		return estaCorrecta;
 	}
+	
+	public boolean estaCompleta(){
+		return estaCompleta;
+	}
 	// setters & getters //
+	
 	
 	
 	public String getPregunta() {
 		return pregunta;
+	}
+
+	
+
+	public void setEstaCompleta(boolean estaCompleta) {
+		this.estaCompleta = estaCompleta;
 	}
 
 	protected void setPregunta(String pregunta) {
