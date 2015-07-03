@@ -18,9 +18,9 @@ public class CondicionConTasaDeCorrecion extends CondicionDelWorker{
 	}
 	
 	private boolean fijarseTasaDeCorrecion(List<Tarea> t){
-		totalDeElementos = int;
+		int totalDeElementos;
 		totalDeElementos = t.size();
-		tareasCorrectas = int;
+		int tareasCorrectas = 0;
 		for(Tarea t1 : t){
 			if(t1.estaCorrecta()){
 				tareasCorrectas ++
