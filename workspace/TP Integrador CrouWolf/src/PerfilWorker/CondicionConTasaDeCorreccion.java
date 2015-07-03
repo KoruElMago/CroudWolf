@@ -2,15 +2,40 @@ package PerfilWorker;
 
 import Worker.Worker;
 
-public class CondicionPorIdioma extends CondicionDelWorker{
+public class CondicionConTasaDeCorrecion extends CondicionDelWorker{
 	
-	String idioma;
+	private Int tasaDeCorrecion;
 	
-	public CondicionPorIdioma(String idioma){
-		this.idioma= idioma;
+	
+	//Constructor
+	public CondicionConTasaDeCorrecion(Int i){
+		this.setTasaDeCorrecion(i);
 	}
-
-	public boolean chequear(Worker w) {
-		return w.getIdiomas().contains(idioma);
+	
+	
+	public boolean chequear(Worker w){
+		return this.fijarseTasaDeCorrecion(w.getTareas());
 	}
-}
+	
+	private boolean fijarseTasaDeCorrecion(List<Tarea> t){
+		totalDeElementos = int;
+		totalDeElementos = t.size();
+		tareasCorrectas = int;
+		for(Tarea t1 : t){
+			if(t1.estaCorrecta()){
+				tareasCorrectas ++
+			}
+		}
+		return (((totalDeElementos * 100) / totalDeElementos) > this.getTasaDeCorrecion());
+	}
+	
+	// getters y setters
+	
+	public void setTasaDeCorrecion(Int i){
+		tasaDeCorrecion = i;
+	}
+	
+	public Int getTasaDeCorrecion(){
+		return tasaDeCorrecion;
+	}
+		
