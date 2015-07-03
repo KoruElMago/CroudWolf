@@ -43,8 +43,8 @@ public class Tarea {
 
 
 	public boolean estaCompleta() {
-		this.getFeedback().getEstado();
-		return false;
+		return this.getFeedback().getEstado();
+		
 	}
 
 	
