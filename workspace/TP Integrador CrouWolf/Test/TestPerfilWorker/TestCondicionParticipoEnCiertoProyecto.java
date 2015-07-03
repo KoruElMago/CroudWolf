@@ -8,7 +8,7 @@ import static org.mockito.Mockito.*;
 import PerfilWorker.CondicionParticipoEnCiertoProyecto;
 import Proyecto.Proyecto;
 import Worker.Worker;
-package TestPerfilWorker
+
 
 
  public class TestCondicionParticipoEnCiertoProyecto{
