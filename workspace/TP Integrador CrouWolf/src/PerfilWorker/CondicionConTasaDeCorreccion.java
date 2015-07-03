@@ -2,12 +2,15 @@ package PerfilWorker;
 
 import Worker.Worker;
 
-public class CondicionConTasaDeCorreccion extends CondicionDelWorker {
-
-	@Override
-	public boolean chequear(Worker w) {
-		// TODO Auto-generated method stub
-		return false;
+public class CondicionPorIdioma extends CondicionDelWorker{
+	
+	String idioma;
+	
+	public CondicionPorIdioma(String idioma){
+		this.idioma= idioma;
 	}
 
+	public boolean chequear(Worker w) {
+		return w.getIdiomas().contains(idioma);
+	}
 }
