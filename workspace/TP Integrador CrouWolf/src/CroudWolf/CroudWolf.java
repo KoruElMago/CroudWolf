@@ -15,7 +15,6 @@ public class CroudWolf {
 	
 	List<Proyecto> proyectos;
 	List<Pago> pagos;
-	List<TemaDeInteres> temasDeInteres;
 	List<Worker> workers;
 	
 	//Constructor
@@ -23,7 +22,6 @@ public class CroudWolf {
 		
 		this.setProyectos(new ArrayList<Proyecto>());
 		this.setPagos(new ArrayList<Pago>());
-		this.setTemasDeInteres(new ArrayList<TemaDeInteres>());
 		this.setWorkers (new ArrayList<Worker>());
 	}
 
@@ -48,15 +46,6 @@ public class CroudWolf {
 		this.pagos = pagos;
 	}
 
-
-	public List<TemaDeInteres> getTemasDeInteres() {
-		return temasDeInteres;
-	}
-
-
-	public void setTemasDeInteres(List<TemaDeInteres> temasDeInteres) {
-		this.temasDeInteres = temasDeInteres;
-	}
 
 
 	public List<Worker> getWorkers() {
