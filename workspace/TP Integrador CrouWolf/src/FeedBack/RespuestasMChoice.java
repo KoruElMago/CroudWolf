@@ -1,29 +1,14 @@
 package FeedBack;
 
-public class RespuestasMChoice {
+public class RespuestasMChoice extends RespuestaCompletable {
 
-	boolean valor;
-	String respuesta;
 
 	
 	public RespuestasMChoice (String respuesta, boolean valor){
-		this.setRespuesta(respuesta);
-		this.setValor(valor);
-		
+		super(valor);
+		this.responder(respuesta);
 	}
-	public boolean esCorrecta() {
-		return  valor;
-	}
-
-	public void setValor(boolean valor) {
-		this.valor = valor;
-	}
-	public String getRespuesta() {
-		return respuesta;
-	}
-	public void setRespuesta(String respuesta) {
-		this.respuesta = respuesta;
-	}
+	
 
 	
 }

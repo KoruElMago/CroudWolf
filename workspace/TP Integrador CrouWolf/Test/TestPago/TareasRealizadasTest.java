@@ -26,7 +26,7 @@ public class TareasRealizadasTest {
 
 	@Test
 	public void testCreador() {
-		assertEquals(condicionTest.getValorPorCondicion() , 0.3 ,0);
+		assertEquals(condicionTest.getValorPorCondicion() , 0.3 , 0.0001);
 	}
 
 	

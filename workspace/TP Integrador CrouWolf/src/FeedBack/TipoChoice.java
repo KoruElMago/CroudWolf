@@ -1,31 +1,31 @@
 package FeedBack;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class TipoChoice {
 	
-	protected List<RespuestasMChoice> respuestasDadas;
+	protected List<RespuestaCompletable> respuestasDadas;
 
+	public TipoChoice(){
+		this.setRespuestasDadas(new ArrayList<RespuestaCompletable>());
+	}
 	public void validar(FeedBack feedBack){
 		boolean res = false;
-		for(RespuestasMChoice r : this.getRespuestasDadas()){
+		for(RespuestaCompletable r : this.getRespuestasDadas()){
 			res = res || r.esCorrecta();
 		}
-		if(res) {
-			feedBack.setEstado(new EstFeedBackCorrecto());
-		}
-		else{
-			feedBack.setEstado(new EstFeedBackIncorrecto());
-		}
+	feedBack.setEstaCorrecta(res);
+	feedBack.setEstaValidada(true);
 	}
 
-	public abstract void elegirRespuesta(RespuestasMChoice respuesta) ;
+	public abstract void elegirRespuesta(RespuestaCompletable respuesta) ;
 
-	public List<RespuestasMChoice> getRespuestasDadas() {
+	public List<RespuestaCompletable> getRespuestasDadas() {
 		return respuestasDadas;
 	}
 
-	protected void setRespuestasDadas(List<RespuestasMChoice> respuestasDadas) {
+	protected void setRespuestasDadas(List<RespuestaCompletable> respuestasDadas) {
 		this.respuestasDadas = respuestasDadas;
 	}
 

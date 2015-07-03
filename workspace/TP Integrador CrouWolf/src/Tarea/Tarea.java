@@ -1,5 +1,7 @@
 package Tarea;
 
+import org.joda.time.DateTime;
+
 public class Tarea {
 
 	public boolean estaCompleta() {
@@ -25,6 +27,11 @@ public class Tarea {
 	public boolean estaDisponible() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public DateTime getFecha() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

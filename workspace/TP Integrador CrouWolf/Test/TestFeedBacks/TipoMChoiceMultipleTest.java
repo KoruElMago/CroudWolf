@@ -8,8 +8,6 @@ import static org.mockito.Mockito.when;
 import org.junit.Before;
 import org.junit.Test;
 
-import FeedBack.EstFeedBackCorrecto;
-import FeedBack.EstFeedBackIncorrecto;
 import FeedBack.FeedBack;
 import FeedBack.RespuestasMChoice;
 import FeedBack.TipoMChoiceMultiple;
@@ -46,7 +44,7 @@ public class TipoMChoiceMultipleTest {
 		mchoice.validar(feedBack);
 		verify(respuesta).esCorrecta();
 		verify(respuesta2).esCorrecta();
-		verify(feedBack).setEstado(new EstFeedBackCorrecto());
+		verify(feedBack).setEstaCorrecta(true);;
 	}
 	@Test
 	public void testValidarIncorrectamente(){
@@ -57,6 +55,6 @@ public class TipoMChoiceMultipleTest {
 		mchoice.validar(feedBack);
 		verify(respuesta).esCorrecta();
 		verify(respuesta2).esCorrecta();
-		verify(feedBack).setEstado(new EstFeedBackIncorrecto());
+		verify(feedBack).setEstaCorrecta(false);;
 	}
 }

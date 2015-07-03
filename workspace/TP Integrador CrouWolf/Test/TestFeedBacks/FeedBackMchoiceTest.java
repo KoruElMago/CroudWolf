@@ -10,30 +10,28 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import FeedBack.EstadoFeedBack;
 import FeedBack.FeedBackMChoice;
 import FeedBack.RespuestasMChoice;
-import FeedBack.TipoMChoice;
+import FeedBack.TipoChoice;
 
 public class FeedBackMchoiceTest {
 	FeedBackMChoice feedback1;
-	TipoMChoice tipoMchoice;
+	TipoChoice tipoMchoice;
 	List<RespuestasMChoice> respuestas;
-	EstadoFeedBack estado;
 	RespuestasMChoice respuesta;
 
 	@Before
 	public void setUp() throws Exception {
-		tipoMchoice =  mock(TipoMChoice.class);
+		tipoMchoice =  mock(TipoChoice.class);
 		respuestas = new ArrayList<RespuestasMChoice>();
-		estado = mock(EstadoFeedBack.class);
 		respuesta = mock(RespuestasMChoice.class);
-		feedback1 = new FeedBackMChoice("adelante estoy seguro de que perderas", respuestas , tipoMchoice, estado);
+		feedback1 = new FeedBackMChoice("adelante estoy seguro de que perderas", respuestas , tipoMchoice);
 	}
 
 	@Test
 	public void testCreador(){
-		assertNotNull(feedback1.getEstado());
+		assertEquals(feedback1.estaCorrecta(),false);
+		assertEquals(feedback1.estaValidada(),false);
 		assertNotNull(feedback1.getPregunta());
 		assertNotNull(feedback1.getRespuestas());
 		assertNotNull(feedback1.getTipo());

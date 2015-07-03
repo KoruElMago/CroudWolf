@@ -5,8 +5,9 @@ public abstract class FeedBack {
 	//Harcodeado by Koru el Mago
 	
 	private String pregunta;
+	private boolean estaValidada;
+	private boolean estaCorrecta;
 	
-	private EstadoFeedBack estado;
 	//Este estado es como guarda el FeedBack si fue validada y en caso de serlo si fue validado correcta o incorrectamente
 	
 	public abstract void validarse();
@@ -14,9 +15,12 @@ public abstract class FeedBack {
 	
 	public boolean estaValidada() {
 		//le pregunta al estado si esta validada
-		return this.getEstado().estaValidada();
+		return estaValidada;
 	}
 	
+	public boolean estaCorrecta(){
+		return estaCorrecta;
+	}
 	// setters & getters //
 	
 	
@@ -28,13 +32,15 @@ public abstract class FeedBack {
 		this.pregunta = pregunta;
 	}
 
-	public EstadoFeedBack getEstado() {
-		return estado;
+	public void setEstaValidada(boolean estaValidada) {
+		this.estaValidada = estaValidada;
 	}
 
-	public void setEstado(EstadoFeedBack estado) {
-		this.estado = estado;
+	public void setEstaCorrecta(boolean estaCorrecta) {
+		this.estaCorrecta = estaCorrecta;
 	}
+
+	
 	
 	
 	

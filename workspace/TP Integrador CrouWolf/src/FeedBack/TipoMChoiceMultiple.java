@@ -6,11 +6,11 @@ public class TipoMChoiceMultiple extends TipoChoice {
 
 
 	public TipoMChoiceMultiple(){
-		this.setRespuestasDadas(new ArrayList<RespuestasMChoice>());
+		this.setRespuestasDadas(new ArrayList<RespuestaCompletable>());
 				
 	}
 	@Override
-	public void elegirRespuesta(RespuestasMChoice respuesta) {
+	public void elegirRespuesta(RespuestaCompletable respuesta) {
 		this.getRespuestasDadas().add(respuesta);
 	}
 

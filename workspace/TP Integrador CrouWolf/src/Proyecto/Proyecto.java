@@ -5,6 +5,7 @@ import java.util.List;
 
 import CroudWolf.CroudWolf;
 import CroudWolf.TemaDeInteres;
+import Pago.Pago;
 import PerfilWorker.PerfilDelWorker;
 import Tarea.PaqueteDeTareas;
 import Tarea.Tarea;
@@ -21,6 +22,7 @@ public class Proyecto {
 	private CroudWolf croudWolf;
 	private Integer tamanhoPaquetes;
 	private List<Worker> subscriptos;
+	private Pago pago;
 	
 	
 	
@@ -141,6 +143,22 @@ public class Proyecto {
 	public String getDescripcion() {
 		return descripcion;
 	}
+	
+	
+
+
+
+
+	public Pago getPago() {
+		return pago;
+	}
+
+
+
+
+	public void setPago(Pago pago) {
+		this.pago = pago;
+	}
 
 
 
@@ -179,6 +197,8 @@ public class Proyecto {
 	public void setCroudWolf(CroudWolf cw){
 		croudWolf = cw;
 	}
+
+
 	
 
 }

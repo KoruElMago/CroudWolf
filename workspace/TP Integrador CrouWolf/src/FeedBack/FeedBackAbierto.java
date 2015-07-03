@@ -10,7 +10,9 @@ public class FeedBackAbierto extends FeedBack {
 	
 	public FeedBackAbierto(String pregunta){
 		this.setPregunta(pregunta);
-		this.setEstado(new EstFeedBackSinValidar());
+		this.setEstaValidada(false);
+		this.setEstaCorrecta(false);
+		
 	}
 
 	@Override
@@ -25,11 +27,13 @@ public class FeedBackAbierto extends FeedBack {
 		this.respuesta = respuesta;
 	}
 	
-	public void validacionManual(EstadoFeedBack  estado){
+	public void validacionManual(boolean  estado){
 		//Esta es la manera mediante la cual se valida este tipo de FeedBack
 		//se pasa por parametro el estado que indica si la validacion fue correcta o incorrecta
 		
-		this.setEstado(estado);
+		this.setEstaCorrecta(estado);
+		this.setEstaValidada(true);
+		
 	}
 	
 	

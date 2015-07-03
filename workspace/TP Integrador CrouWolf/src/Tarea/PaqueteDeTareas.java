@@ -25,7 +25,7 @@ public class PaqueteDeTareas {
 				return;
 			}
 		}
-			this.getCroudWolf().notificarPaqueteCompleto();
+			this.getCroudWolf().notificarPaqueteCompleto(this);
 	}
 
 	private CroudWolf getCroudWolf() {
@@ -46,6 +46,11 @@ public class PaqueteDeTareas {
 
 	public void setProyecto(Proyecto proyecto) {
 		this.proyecto = proyecto;
+	}
+
+	public boolean estaCompleto() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

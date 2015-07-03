@@ -1,7 +1,6 @@
 package TestFeedBacks;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -11,30 +10,28 @@ import org.junit.Before;
 import org.junit.Test;
 
 import FeedBack.FeedBack;
-import FeedBack.RespuestasMChoice;
-import FeedBack.TipoMChoiceRespUnica;
+import FeedBack.RespuestaCompletable;
+import FeedBack.TipoSChoiceCompletable;
 
-public class TipoMChoiceRespUnicaTest {
+public class TipoSChoiceCompletableTest {
 
-	TipoMChoiceRespUnica mchoice;
+	TipoSChoiceCompletable mchoice;
 	FeedBack feedBack;
-	RespuestasMChoice respuesta;
-	RespuestasMChoice respuesta2;
+	RespuestaCompletable respuesta;
+	RespuestaCompletable respuesta2;
 	
 	@Before
 	public void setUp() throws Exception {
-		mchoice = new TipoMChoiceRespUnica();
+		mchoice = new TipoSChoiceCompletable();
 		feedBack = mock(FeedBack.class);
-		respuesta = mock(RespuestasMChoice.class);
-		respuesta2 = mock(RespuestasMChoice.class);
+		respuesta = mock(RespuestaCompletable.class);
+		respuesta2 = mock(RespuestaCompletable.class);
 	}
 
 	@Test
 	public void testElegirRespuesta() {
 		mchoice.elegirRespuesta(respuesta);
-		mchoice.elegirRespuesta(respuesta2);
-		assertFalse(mchoice.getRespuestasDadas().contains(respuesta));
-		assertTrue(mchoice.getRespuestasDadas().contains(respuesta2));
+		assertTrue(mchoice.getRespuestasDadas().contains(respuesta));
 	}
 	
 	@Test
@@ -49,4 +46,5 @@ public class TipoMChoiceRespUnicaTest {
 		verify(feedBack).setEstaCorrecta(true);
 		
 	}
+
 }

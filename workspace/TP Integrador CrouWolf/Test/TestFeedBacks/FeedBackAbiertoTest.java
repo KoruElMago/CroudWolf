@@ -43,7 +43,7 @@ public class FeedBackAbiertoTest {
 	@Test
 	public void testValidacionManual(){
 		feedback1.responder("nah");
-		feedback1.validacionManual(new EstFeedBackCorrecto());
+		feedback1.validacionManual(true);
 		assertTrue(feedback1.estaValidada());
 	}
 
