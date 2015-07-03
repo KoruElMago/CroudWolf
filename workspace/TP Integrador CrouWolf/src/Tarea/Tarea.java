@@ -1,37 +1,68 @@
 package Tarea;
 
-import org.joda.time.DateTime;
 
 public class Tarea {
+	
+	String instruccion;
+	boolean disponible;
+	Feedback feedback;
+
+
+	public Tarea (String instruccion, Feedback feedback){
+		
+	this.setDisponible(true);
+	this.setInstruccion(instruccion);
+	this.setFeedback(feedback);
+	
+	}
+	
+	
+	
+	
+	public String getInstruccion() {
+		return instruccion;
+	}
+
+
+
+	public void setInstruccion(String instruccion) {
+		this.instruccion = instruccion;
+	}
+
+
+
+	
+	}
+
+
+
+	public void setDisponible(boolean disponible) {
+		Disponible = disponible;
+	}
+
+
 
 	public boolean estaCompleta() {
-		// TODO Auto-generated method stub
+		this.getFeedback().getEstado();
 		return false;
 	}
 
-	public boolean esaDisponible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	public boolean estaCorrecta() {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return this.getFeedback().estaCorrecta;
 	}
 
-	public boolean esTareaIncompleta() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean esTareaCompleta() {
+		
+		
+		return this.getFeedback().estaCompleta();
 	}
 
 	public boolean estaDisponible() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public DateTime getFecha() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return disponible;
 	}
 
 }
