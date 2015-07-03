@@ -24,4 +24,4 @@ public class CondicionNoParticipoEnCiertoProyecto extends CondicionDelWorker{
 	public Proyecto getProyecto(){
 		return proyectoEnElQueTieneQueHaberParticipado;
 	}
-	
+}
