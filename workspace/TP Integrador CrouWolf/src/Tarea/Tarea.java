@@ -1,19 +1,20 @@
 package Tarea;
-
-
+import org.joda.time.DateTime;
+import Feedback
 public class Tarea {
+	
 	
 	String instruccion;
 	boolean disponible;
 	Feedback feedback;
-
+	DateTime fecha;
 
 	public Tarea (String instruccion, Feedback feedback){
 		
 	this.setDisponible(true);
 	this.setInstruccion(instruccion);
 	this.setFeedback(feedback);
-	
+	this.setFecha(new DateTime());
 	}
 	
 	
@@ -32,7 +33,21 @@ public class Tarea {
 
 
 	
+	
+
+
+
+	public DateTime getFecha() {
+		return fecha;
 	}
+
+
+
+
+	public void setFecha(DateTime fecha) {
+		this.fecha = fecha;
+	}
+
 
 
 
@@ -43,8 +58,8 @@ public class Tarea {
 
 
 	public boolean estaCompleta() {
-		return this.getFeedback().getEstado();
-		
+		this.getFeedback().getEstado();
+		return false;
 	}
 
 	
