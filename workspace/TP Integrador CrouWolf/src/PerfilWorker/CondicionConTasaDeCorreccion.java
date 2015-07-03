@@ -38,4 +38,4 @@ public class CondicionConTasaDeCorrecion extends CondicionDelWorker{
 	public Int getTasaDeCorrecion(){
 		return tasaDeCorrecion;
 	}
-		
+}
