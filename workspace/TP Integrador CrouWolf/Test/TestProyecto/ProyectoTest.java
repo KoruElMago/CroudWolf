@@ -115,9 +115,9 @@ public class ProyectoTest {
 		proyectoT.agregarTarea(mockTarea);
 		proyectoT.agregarTarea(mockTarea2);
 		proyectoT.agregarTarea(mockTarea3);
-		when(mockTarea.esTareaIncompleta()).thenReturn(true);
-		when(mockTarea2.esTareaIncompleta()).thenReturn(false);
-		when(mockTarea3.esTareaIncompleta()).thenReturn(true);
+		when(mockTarea.estaCompleta()).thenReturn(true);
+		when(mockTarea2.estaCompleta()).thenReturn(false);
+		when(mockTarea3.estaCompleta()).thenReturn(true);
 		assertEquals(proyectoT.tareasIncompletas().size(), 2);
 		assertTrue(proyectoT.tareasIncompletas().contains(mockTarea));
 		assertFalse(proyectoT.tareasIncompletas().contains(mockTarea2));

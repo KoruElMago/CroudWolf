@@ -84,7 +84,7 @@ public class Proyecto {
 	public List<Tarea> tareasIncompletas(){
 		List<Tarea> rs = new ArrayList<Tarea>();
 		for (Tarea t : this.getTareas()){
-			if(t.esTareaIncompleta()){
+			if(!t.estaCompleta()){
 				rs.add(t);
 			}
 		}

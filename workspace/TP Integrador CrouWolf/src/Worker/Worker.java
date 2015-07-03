@@ -25,14 +25,15 @@ public class Worker {
 	
 	
 	//Constructor
-	public Worker (String nombre, int edad){
+	public Worker (String nombre, int edad, List<String> idiomas){
 		
 		this.setNombre(nombre);
 		this.setTareas(new ArrayList<PaqueteDeTareas>());
-		this.setIdiomas(new ArrayList<String>());
+		this.setIdiomas(idiomas);
 		this.setEdad(edad);
 		this.setPosiblesProyectos(new ArrayList<Proyecto>());
 		this.setSubscripciones(new ArrayList<Proyecto>());
+		this.setPagos(new ArrayList<Pago>());
 	
 		
 	}
@@ -107,6 +108,10 @@ public class Worker {
 
 	//Metodos
 	
+	public void agregarIdioma(String s){
+		this.getIdiomas().add(s);
+	}
+	
 	public void notificarProyecto(Proyecto p){
 		this.getPosiblesProyectos().add(p);
 	}
@@ -121,10 +126,11 @@ public class Worker {
 		
 	}
 
-	private List<PaqueteDeTareas> select(List<PaqueteDeTareas> tareas2, Proyecto proyecto) {
+	//private
+	public List<PaqueteDeTareas> select(List<PaqueteDeTareas> tareas2, Proyecto proyecto) {
 		List<PaqueteDeTareas> ls = new ArrayList<PaqueteDeTareas>();
 		for (PaqueteDeTareas p: tareas2){
-			if(p.getProyecto().equals(p)){
+			if(p.getProyecto().equals(proyecto)){
 				ls.add(p);
 			}		
 		}

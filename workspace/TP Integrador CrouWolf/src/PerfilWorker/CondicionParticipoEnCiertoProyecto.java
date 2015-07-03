@@ -1,5 +1,6 @@
 package PerfilWorker;
 
+import Proyecto.Proyecto;
 import Worker.Worker;
 
 public class CondicionParticipoEnCiertoProyecto extends CondicionDelWorker{
@@ -24,4 +25,4 @@ public class CondicionParticipoEnCiertoProyecto extends CondicionDelWorker{
 	public Proyecto getProyecto(){
 		return proyectoEnElQueTieneQueHaberParticipado;
 	}
-	
+}

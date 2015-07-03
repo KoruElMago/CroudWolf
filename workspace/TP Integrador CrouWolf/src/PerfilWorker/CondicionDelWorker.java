@@ -8,3 +8,4 @@ public abstract class CondicionDelWorker {
 	public abstract boolean chequear(Worker w);
 	
 }
+

@@ -10,8 +10,7 @@ public class TemaDeInteres {
 	
 	private List<Worker> workers;
 	private String tema;
-
-
+	
 	//constructor
 	public TemaDeInteres(String t){	
 		this.setWorkers(new ArrayList<Worker>());
@@ -30,20 +29,20 @@ public class TemaDeInteres {
 	
 	//getters y setters
 	
-	private List<Worker> getWorkers() {
+	public List<Worker> getWorkers() {
 		return workers;
 	}
 	
-	private void setWorkers(List<Worker> ws){
+	public void setWorkers(List<Worker> ws){
 		workers = ws;
 	}
 
-	private void setTema(String t) {
-		tema = t;
+	public void setTema(String t) {
+		this.tema=t;
 	}
-
-
 	
-	
+	public String getTema(){
+		return tema;
+	}
 
 }

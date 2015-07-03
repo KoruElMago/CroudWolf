@@ -1,14 +1,17 @@
 package PerfilWorker;
 
-import Worker.Worker;
+import java.util.List;
 
-public class CondicionConTasaDeCorrecion extends CondicionDelWorker{
+import Worker.Worker;
+import Tarea.Tarea;
+
+public class CondicionConTasaDeCorreccion extends CondicionDelWorker{
 	
-	private Int tasaDeCorrecion;
+	private int tasaDeCorrecion;
 	
 	
 	//Constructor
-	public CondicionConTasaDeCorrecion(Int i){
+	public CondicionConTasaDeCorreccion(int i){
 		this.setTasaDeCorrecion(i);
 	}
 	
@@ -17,25 +20,25 @@ public class CondicionConTasaDeCorrecion extends CondicionDelWorker{
 		return this.fijarseTasaDeCorrecion(w.getTareas());
 	}
 	
-	private boolean fijarseTasaDeCorrecion(List<Tarea> t){
+	public boolean fijarseTasaDeCorrecion(List<Tarea> t){
 		int totalDeElementos;
 		totalDeElementos = t.size();
 		int tareasCorrectas = 0;
 		for(Tarea t1 : t){
 			if(t1.estaCorrecta()){
-				tareasCorrectas ++
+				tareasCorrectas ++;
 			}
 		}
-		return (((totalDeElementos * 100) / totalDeElementos) > this.getTasaDeCorrecion());
+		return (((totalDeElementos * 100) / tareasCorrectas) > this.getTasaDeCorrecion());
 	}
 	
 	// getters y setters
 	
-	public void setTasaDeCorrecion(Int i){
+	public void setTasaDeCorrecion(int i){
 		tasaDeCorrecion = i;
 	}
 	
-	public Int getTasaDeCorrecion(){
+	public int getTasaDeCorrecion(){
 		return tasaDeCorrecion;
 	}
-		
+}
