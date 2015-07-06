@@ -4,12 +4,15 @@ import org.joda.time.DateTime;
 import FeedBack.FeedBack;
 public class Tarea {
 	
+	//Atributos
 	
 	String instruccion;
 	boolean disponible;
 	FeedBack feedback;
 	DateTime fecha;
-
+	
+	//Constructor
+	
 	public Tarea (String instruccion, FeedBack feedback){
 		
 	this.setDisponible(true);
@@ -19,7 +22,7 @@ public class Tarea {
 	}
 	
 	
-	
+	// Setters y Getters
 	
 	public String getInstruccion() {
 		return instruccion;
@@ -53,6 +56,9 @@ public class Tarea {
 	}
 
 
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
 
 
 	public DateTime getFecha() {
@@ -67,32 +73,25 @@ public class Tarea {
 	}
 
 
+	
+
+	//Metodos
 
 
-	public void setDisponible(boolean disponible) {
-		this.disponible = disponible;
-	}
-
-
-
-	public boolean estaCompleta() {
+	public boolean estaCompleta() {  //Pregunta al feedback si la tarea se encuentra completa
 		return this.getFeedback().estaCompleta();
 	}
 
 	
 
-	public boolean estaCorrecta() {
+	public boolean estaCorrecta() { //Pregunta al feedback si la tarea se encuentra Correcta
 		
 		return this.getFeedback().estaCorrecta();
 	}
 
-	public boolean esTareaCompleta() {
-		
-		
-		return this.getFeedback().estaCompleta();
-	}
+	
 
-	public boolean estaDisponible() {
+	public boolean estaDisponible() { //Pregunta si es una tarea Disponible
 		
 		return disponible;
 	}
