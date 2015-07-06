@@ -9,7 +9,6 @@ public class PerfilDelWorker {
 	private List<CondicionDelWorker> condiciones;
 	
 
-	//ver si crearla vacia o ya con una list de condiciones dadas
 	public PerfilDelWorker (List<CondicionDelWorker> ls){
 		this.setCondiciones(ls);
 	}
