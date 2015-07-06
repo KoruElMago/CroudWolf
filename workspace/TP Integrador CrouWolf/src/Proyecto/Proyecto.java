@@ -25,7 +25,8 @@ public class Proyecto {
 	private Pago pago;
 	
 	
-	
+
+	//constructor.
 	public Proyecto (String nombre, String descripcion, CroudWolf cw, PerfilDelWorker pdw){
 		this.setNombre(nombre);
 		this.setDescripcion(descripcion);
@@ -39,28 +40,33 @@ public class Proyecto {
 
 	
 	
-	
+	//Agrega una tarea a la lista de tareas del proyecto.	
 	public void agregarTarea(Tarea t){
 		this.getTareas().add(t);
 	}
 	
+	//Agrega una lista de tareas a la lista del proyecto.
 	public void agregarTarea(List<Tarea> t){
 		this.getTareas().addAll(t);
 	}
 	
+	//Agrega un tema de interes al proyecto.
 	public void agregarTemaDeInteres(TemaDeInteres t){
 		this.temasDeInteres.add(t);
 	}
 
+	//Retorna el proximo parquete de tareas.
 	private PaqueteDeTareas proximoPaqueteDeTareas(){
 		return (new PaqueteDeTareas(this));
 	}
 	
-	//Asumo que el worker esta dentro del proyecto
+	//Da a un worker el proximo paquete de tareas que debe resolver.
+	//Asumo que el worker esta dentro del proyecto.
 	public void solicitarNuevoPaqueteDeTareas(Worker w){
 		w.asignarPaqueteDeTareas(this.proximoPaqueteDeTareas());
 	}
 
+	//Retorna una lista de tareas disponible que posee el proyecto.
 	public List<Tarea> tareasDisponibles() {
 		List <Tarea>rs = new ArrayList<Tarea>();
 		for (Tarea t : this.getTareas()){
@@ -71,6 +77,7 @@ public class Proyecto {
 		return rs;
 	}
 	
+	//Retorna una lista de tareas completas que posee el proyecto.
 	public List<Tarea> tareasCompletas(){
 		List<Tarea>rs = new ArrayList<Tarea>();
 		for (Tarea t : this.getTareas()){
@@ -81,6 +88,7 @@ public class Proyecto {
 		return rs;
 	}
 	
+	//Retorna una lista de tareas incompletas que posee el proyecto.
 	public List<Tarea> tareasIncompletas(){
 		List<Tarea> rs = new ArrayList<Tarea>();
 		for (Tarea t : this.getTareas()){
@@ -91,6 +99,7 @@ public class Proyecto {
 		return rs;
 	}
 	
+	//Agrega un subcripto al proyecto(que son workers).
 	public void agregarSubscripto(Worker w){
 		this.getSubscriptos().add(w);
 	}
@@ -113,55 +122,33 @@ public class Proyecto {
 		this.perfilWorker = pdw;
 	}
 
-
-
-
 	public List<TemaDeInteres> getTemasDeInteres() {
 		return temasDeInteres;
 	}
-
-
-
 
 	public void setTemasDeInteres(List<TemaDeInteres> temasDeInteres) {
 		this.temasDeInteres = temasDeInteres;
 	}
 
-
-
-
 	public String getNombre1() {
 		return nombre1;
 	}
-
 
 	public PerfilDelWorker getPerfilWorker() {
 		return perfilWorker;
 	}
 
-
 	public String getDescripcion() {
 		return descripcion;
 	}
 	
-	
-
-
-
-
 	public Pago getPago() {
 		return pago;
 	}
 
-
-
-
 	public void setPago(Pago pago) {
 		this.pago = pago;
 	}
-
-
-
 
 	public void setTareas(ArrayList<Tarea> tareas) {
 		this.tareas = tareas;
@@ -175,20 +162,13 @@ public class Proyecto {
 		tamanhoPaquetes = i;
 	}
 
-
-
-
 	public List<Worker> getSubscriptos() {
 		return subscriptos;
 	}
 
-
-
-
 	public void setSubscriptos(List<Worker> subscriptos) {
 		this.subscriptos = subscriptos;
 	}
-	
 	
 	public CroudWolf getCroudWolf() {
 		return croudWolf;		
@@ -197,8 +177,5 @@ public class Proyecto {
 	public void setCroudWolf(CroudWolf cw){
 		croudWolf = cw;
 	}
-
-
 	
-
 }
