@@ -103,24 +103,19 @@ public class Proyecto {
 	public void agregarSubscripto(Worker w){
 		this.getSubscriptos().add(w);
 	}
-	
-	
-	
 
-
+	//Retorna una lista de tareas disponibles de tamaño segun el tamaño de paquete de tareas que tiene el proyecto.
 	public List<Tarea> getProximasTareasDisponibles() {
-		List<Tarea> ls = new ArrayList<Tarea>();
-		
-		for (int i = 0; i < getTamanhoPaquetes(); i++) {
-			
-			ls.add(getTareasDisponibles().get(i));
-		}
-		return ls;
+	List<Tarea> ls = new ArrayList<Tarea>();
+	List<Tarea> disp = getTareasDisponibles();
+		 for (int i = 0; i < getTamanhoPaquetes(); i++) {
+   
+		  ls.add(disp.get(i));
+	  }
+	  return ls;
 	}
 
-
-
-
+	//Retorna una lista de tareas disponibles que tiene el proyecto.
 	private List<Tarea> getTareasDisponibles() {
 
 	List<Tarea>	ls = new ArrayList<Tarea>();
@@ -134,9 +129,6 @@ public class Proyecto {
 	}
 	return ls;
 	}
-
-
-	
 
 	//getters y setters
 
