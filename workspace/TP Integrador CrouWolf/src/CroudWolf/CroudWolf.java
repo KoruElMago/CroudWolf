@@ -71,22 +71,24 @@ public class CroudWolf {
 
 	//Metodos
 	
-	public void agregarWorker(Worker w){
+	
+	
+	public void agregarWorker(Worker w){ //Agrega un Worker a la lista
 
 		this.getWorkers().add(w);
 	}
 
-	public void agregarProyecto(Proyecto p){
+	public void agregarProyecto(Proyecto p){ //Agrega un proyecto a la lista y notifica un nuevo proyecto
 		
 		this.getProyectos().add(p);
 		this.notificarNuevoProyecto(p);
 	}
 	
-	public void agregarTemaDeInteres(TemaDeInteres t){
+	public void agregarTemaDeInteres(TemaDeInteres t){ //Agrega un TemaDeInteres a la lista
 		this.getTemasDeInteres().add(t);
 	}
 
-	public void notificarNuevoProyecto(Proyecto p){
+	public void notificarNuevoProyecto(Proyecto p){ //Le pide a los temas de interes del proyecto que notifiquen a sus workers subscriptos
 		
 		for(TemaDeInteres i : p.getTemasDeInteres()){
 			
