@@ -15,7 +15,7 @@ public class CondicionConTasaDeCorreccion extends CondicionDelWorker{
 		this.setTasaDeCorrecion(i);
 	}
 	
-	
+	//Retorna un booleano dependiendo del resultado de chequear la condicion por tasa de correccion.
 	public boolean chequear(Worker w){
 		return this.fijarseTasaDeCorrecion(w.getTareas());
 	}
