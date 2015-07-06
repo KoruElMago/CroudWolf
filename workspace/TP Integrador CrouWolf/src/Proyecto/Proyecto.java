@@ -103,6 +103,40 @@ public class Proyecto {
 	public void agregarSubscripto(Worker w){
 		this.getSubscriptos().add(w);
 	}
+	
+	
+	
+
+
+	public List<Tarea> getProximasTareasDisponibles() {
+		List<Tarea> ls = new ArrayList<Tarea>();
+		
+		for (int i = 0; i < getTamanhoPaquetes(); i++) {
+			
+			ls.add(getTareasDisponibles().get(i));
+		}
+		return ls;
+	}
+
+
+
+
+	private List<Tarea> getTareasDisponibles() {
+
+	List<Tarea>	ls = new ArrayList<Tarea>();
+	
+	for (Tarea tarea : this.getTareas()) {	
+		if (tarea.estaDisponible()) {
+			ls.add(tarea);
+			
+		}
+		
+	}
+	return ls;
+	}
+
+
+	
 
 	//getters y setters
 
