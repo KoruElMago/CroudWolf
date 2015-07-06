@@ -11,6 +11,7 @@ public class CondicionPorIdioma extends CondicionDelWorker{
 		this.setIdioma(idioma);
 	}
 
+	//Retorna un booleano dependiendo del resultado de chequear la condicion por idioma.
 	public boolean chequear(Worker w) {
 		return w.getIdiomas().contains(idioma);
 	}
