@@ -8,7 +8,7 @@ public class PerfilDelWorker {
 	
 	private List<CondicionDelWorker> condiciones;
 	
-
+	//constructor
 	public PerfilDelWorker (List<CondicionDelWorker> ls){
 		this.setCondiciones(ls);
 	}
