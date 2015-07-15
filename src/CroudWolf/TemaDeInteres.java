@@ -19,7 +19,7 @@ public class TemaDeInteres {
 	
 	public void notificarWorkers(Proyecto p) {
 		for (Worker w: this.getWorkers()){
-			w.getPosiblesProyectos().add(p);
+			w.notificarProyecto(p);
 		}
 	}
 

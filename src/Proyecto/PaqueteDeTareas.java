@@ -9,7 +9,6 @@ public class PaqueteDeTareas {
 	
 	List<Tarea> tareas;
 	Proyecto proyecto;
-	CroudWolf croudwolf;
 	
 
 	public PaqueteDeTareas(Proyecto p, List<Tarea> tareas){
@@ -24,7 +23,7 @@ public class PaqueteDeTareas {
 				return;
 			}
 		}
-			this.getCroudWolf().notificarPaqueteCompleto()
+			this.getProyecto().getCroudWolf().notificarPaqueteCompleto(this);
 	}
 
 	public List<Tarea> getTareas() {
@@ -41,6 +40,11 @@ public class PaqueteDeTareas {
 
 	public void setProyecto(Proyecto proyecto) {
 		this.proyecto = proyecto;
+	}
+
+	public boolean estaCompleto() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Pago.Pago;
+import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
-import Tarea.PaqueteDeTareas;
 import Tarea.Tarea;
 
 

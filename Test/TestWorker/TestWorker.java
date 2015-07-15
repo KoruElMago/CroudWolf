@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import Pago.Pago;
+import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
-import Tarea.PaqueteDeTareas;
 import Worker.Worker;
 import static org.mockito.Mockito.*;
 
@@ -86,16 +86,6 @@ public class TestWorker {
 		worker1.agregarIdioma("Polaco");
 		assertTrue(worker1.getIdiomas().contains("Polaco"));
 		assertEquals(worker1.getIdiomas().size(), 2);
-	}
-	
-	@Test
-	public void testSelect() {
-		
-		when(paquete1.getProyecto()).thenReturn(proyecto1);
-		worker1.getPaqueteDeTareas().add(paquete1);
-		worker1.select(worker1.getPaqueteDeTareas(), proyecto1);
-		verify(paquete1).getProyecto().equals(proyecto1);
-		
 	}
 	
 	@Test 

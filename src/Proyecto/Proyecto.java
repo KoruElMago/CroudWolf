@@ -7,7 +7,6 @@ import CroudWolf.CroudWolf;
 import CroudWolf.TemaDeInteres;
 import Pago.Pago;
 import PerfilWorker.PerfilDelWorker;
-import Tarea.PaqueteDeTareas;
 import Tarea.Tarea;
 import Worker.Worker;
 
@@ -57,7 +56,7 @@ public class Proyecto {
 
 	//Retorna el proximo parquete de tareas.
 	private PaqueteDeTareas proximoPaqueteDeTareas(){
-		return (new PaqueteDeTareas(this));
+		return (new PaqueteDeTareas(this,this.getProximasTareasDisponibles()));
 	}
 	
 	//Da a un worker el proximo paquete de tareas que debe resolver.
@@ -109,7 +108,7 @@ public class Proyecto {
 	List<Tarea> ls = new ArrayList<Tarea>();
 	List<Tarea> disp = getTareasDisponibles();
 		 for (int i = 0; i < getTamanhoPaquetes(); i++) {
-   
+			 
 		  ls.add(disp.get(i));
 	  }
 	  return ls;

@@ -52,7 +52,7 @@ public class TemaDeInteresTest {
 		
 		tema1.agregarWorker(worker1);
 		tema1.notificarWorkers(proyecto1);
-		verify(worker1).getPosiblesProyectos().add(proyecto1);
+		verify(worker1).notificarProyecto(proyecto1);
 		
 	}
 

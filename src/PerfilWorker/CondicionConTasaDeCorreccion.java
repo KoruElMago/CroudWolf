@@ -21,15 +21,13 @@ public class CondicionConTasaDeCorreccion extends CondicionDelWorker{
 	}
 	
 	public boolean fijarseTasaDeCorrecion(List<Tarea> t){
-		int totalDeElementos;
-		totalDeElementos = t.size();
 		int tareasCorrectas = 0;
 		for(Tarea t1 : t){
 			if(t1.estaCorrecta()){
 				tareasCorrectas ++;
 			}
 		}
-		return (((totalDeElementos * 100) / tareasCorrectas) > this.getTasaDeCorrecion());
+		return (((tareasCorrectas/t.size())*100) > this.getTasaDeCorrecion());
 	}
 	
 	// getters y setters

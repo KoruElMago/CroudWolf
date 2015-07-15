@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Pago.Pago;
+import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
-import Tarea.PaqueteDeTareas;
 import Worker.Worker;
 
 public class CroudWolf {
@@ -23,18 +23,18 @@ public class CroudWolf {
 		this.setProyectos(new ArrayList<Proyecto>());
 		this.setPagos(new ArrayList<Pago>());
 		this.setWorkers (new ArrayList<Worker>());
-		this.setTemasDeInteres(new ArrayList<TemaDeInteres>);
+		this.setTemasDeInteres(new ArrayList<TemaDeInteres>());
 	}
 
 	//getters y setters
 	
 	
-	public voidSetTemasDeInteres(List<TemaDeInteres> temas){
+	public void setTemasDeInteres(List<TemaDeInteres> temas){
 		
-		his.temasDeInteres = temas;
+		this.temasDeInteres = temas;
 	}
 	
-	public List<TemaDeInteres> getTemasDeInteres{
+	public List<TemaDeInteres> getTemasDeInteres(){
 		
 		return this.temasDeInteres;
 	}

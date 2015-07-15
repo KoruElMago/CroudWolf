@@ -13,8 +13,8 @@ import static org.mockito.Mockito.*;
 import CroudWolf.CroudWolf;
 import CroudWolf.TemaDeInteres;
 import PerfilWorker.PerfilDelWorker;
+import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
-import Tarea.PaqueteDeTareas;
 import Tarea.Tarea;
 import Worker.Worker;
 
@@ -79,8 +79,13 @@ public class ProyectoTest {
 	
 	@Test
 	public void testSolicitarNuevoPaqueteDeTareas(){
+		proyectoT.agregarSubscripto(mockWorker);
+		proyectoT.agregarTarea(mockTarea);
+		proyectoT.agregarTarea(mockTarea2);
+		when(mockTarea.estaDisponible()).thenReturn(true);
+		when(mockTarea2.estaDisponible()).thenReturn(false);
 		proyectoT.solicitarNuevoPaqueteDeTareas(mockWorker);
-		verify(mockWorker, times(1)).asignarPaqueteDeTareas(any(PaqueteDeTareas.class));
+		verify(mockWorker).asignarPaqueteDeTareas(any(PaqueteDeTareas.class));
 	}
 
 	@Test

@@ -12,9 +12,10 @@ import org.junit.Test;
 import CroudWolf.CroudWolf;
 import CroudWolf.TemaDeInteres;
 import Pago.Pago;
+import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
-import Tarea.PaqueteDeTareas;
 import Worker.Worker;
+
 public class CroudWolfTest {
 
 	TemaDeInteres tema1;
