@@ -7,7 +7,7 @@ import org.joda.time.*;
 
 public class TareasRealizadasAntesDe extends CondicionYMontoDePago{
 
-	
+	//Atributos.	
 	DateTime fecha;
 	
 	//Constructor.
