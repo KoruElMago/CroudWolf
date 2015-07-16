@@ -6,11 +6,13 @@ public class RespuestaCompletable  {
 	boolean valor;
 	String respuesta;
 
-	
+	//Constructor.
 	public RespuestaCompletable (boolean valor){
 		this.setValor(valor);
 		
 	}
+	
+	//Getters y setters (Algunos cambiados de nombre).
 	public boolean esCorrecta() {
 		return  valor;
 	}
