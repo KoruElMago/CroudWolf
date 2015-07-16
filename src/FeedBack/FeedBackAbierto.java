@@ -22,7 +22,7 @@ public class FeedBackAbierto extends FeedBack {
 	}
 
 
-
+	//Permite poner una respuesta en el feedBack
 	public void responder(String respuesta) {
 		this.respuesta = respuesta;
 	}
