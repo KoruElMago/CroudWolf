@@ -5,6 +5,7 @@ import java.util.List;
 
 public abstract class TipoChoice {
 	
+	//Atributos.
 	protected List<RespuestaCompletable> respuestasDadas;
 
 	//Constructor
