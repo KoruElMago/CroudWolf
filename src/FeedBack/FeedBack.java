@@ -4,6 +4,7 @@ public abstract class FeedBack {
 
 	//Harcodeado by Koru el Mago
 	
+	//Atributos.
 	private String pregunta;
 	private boolean estaValidada;
 	private boolean estaCorrecta;
