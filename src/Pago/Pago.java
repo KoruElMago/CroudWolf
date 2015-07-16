@@ -10,19 +10,13 @@ public class Pago {
 	List<CondicionYMontoDePago> condiciones;
 	CroudWolf pagador;
 	
-	
+	//Constructor.
 	public Pago (CroudWolf croudwolf, List<CondicionYMontoDePago> condiciones){
 		this.setPagador(croudwolf);
 		this.setCondiciones(condiciones);
 	}
-	public List<CondicionYMontoDePago> getCondiciones() {
-		return condiciones;
-	}
-
-	public void setCondiciones(List<CondicionYMontoDePago> condiciones) {
-		this.condiciones = condiciones;
-	}
 	
+	//Calcula el monto que se le debe pagar a un worker.
 	public float calcularMonto(Worker worker) {
 		
 		float monto=0;
@@ -35,6 +29,15 @@ public class Pago {
 		}
 		
 		return monto;
+	}
+	
+	//Getters y setters
+	public List<CondicionYMontoDePago> getCondiciones() {
+		return condiciones;
+	}
+
+	public void setCondiciones(List<CondicionYMontoDePago> condiciones) {
+		this.condiciones = condiciones;
 	}
 
 	public CroudWolf getPagador() {
