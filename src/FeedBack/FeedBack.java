@@ -19,16 +19,17 @@ public abstract class FeedBack {
 		return estaValidada;
 	}
 	
+	//Devuelve si el feedBack esta correcto o no.
 	public boolean estaCorrecta(){
 		return estaCorrecta;
 	}
 	
+	//Devuelve si el feedBack esta completo o no.
 	public boolean estaCompleta(){
 		return estaCompleta;
 	}
+	
 	// setters & getters //
-	
-	
 	
 	public String getPregunta() {
 		return pregunta;
