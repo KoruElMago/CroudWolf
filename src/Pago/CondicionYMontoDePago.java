@@ -7,18 +7,12 @@ public abstract class CondicionYMontoDePago {
 
  float valorPorCondicion;
 
- 
+//Constructor.
 public CondicionYMontoDePago(Float valor) {
 	this.setValorPorCondicion(valor);
 }
-public float getValorPorCondicion() {
-	return valorPorCondicion;
-}
 
-public void setValorPorCondicion(float valorPorCondicion) {
-	this.valorPorCondicion = valorPorCondicion;
-}
-
+//Calcula el monto que debe recibir un worker por sus tareas completadas.
 public float calcularMonto(Worker worker) {
 	
 	float res = 0;
@@ -31,5 +25,15 @@ public float calcularMonto(Worker worker) {
 
 }
 
+//Mensaje abstracto que devuelve un booleano al chequear la condicion.
 public abstract boolean chequearCondicion(Tarea t);
+
+//Getters y setters.
+public float getValorPorCondicion() {
+	return valorPorCondicion;
+}
+
+public void setValorPorCondicion(float valorPorCondicion) {
+	this.valorPorCondicion = valorPorCondicion;
+}
 }
