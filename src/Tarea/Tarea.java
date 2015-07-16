@@ -25,13 +25,13 @@ public class Tarea {
 	//Metodos
 
 
-	public boolean estaCompleta() {  //Pregunta al feedback si la tarea se encuentra completa
+	public boolean estaCompleta() {  //Pregunta al feedback si se encuentra completo
 		return this.getFeedback().estaCompleta();
 	}
 
 	
 
-	public boolean estaCorrecta() { //Pregunta al feedback si la tarea se encuentra Correcta
+	public boolean estaCorrecta() { //Pregunta al feedback si se encuentra Correcto
 		
 		return this.getFeedback().estaCorrecta();
 	}
