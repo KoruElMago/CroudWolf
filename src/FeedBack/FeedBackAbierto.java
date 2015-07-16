@@ -6,6 +6,7 @@ public class FeedBackAbierto extends FeedBack {
 	//Este Tipo de FeedBack tiene la particularidad de que no puede ser validada automaticamente
 	//y su validacion debe de hacerla alguien de por fuera 
 	
+	//Atributos.
 	private String respuesta;
 	
 	public FeedBackAbierto(String pregunta){
