@@ -6,7 +6,8 @@ import CroudWolf.CroudWolf;
 import Worker.Worker;
 
 public class Pago {
-
+	
+	//Atributos.
 	List<CondicionYMontoDePago> condiciones;
 	CroudWolf pagador;
 	
