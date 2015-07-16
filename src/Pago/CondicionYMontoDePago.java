@@ -5,6 +5,7 @@ import Worker.Worker;
 
 public abstract class CondicionYMontoDePago {
 
+ //Atributos.
  float valorPorCondicion;
 
 //Constructor.
