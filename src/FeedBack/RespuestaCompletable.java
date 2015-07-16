@@ -2,7 +2,7 @@ package FeedBack;
 
 public class RespuestaCompletable  {
 
-	
+	//Atributos.
 	boolean valor;
 	String respuesta;
 
