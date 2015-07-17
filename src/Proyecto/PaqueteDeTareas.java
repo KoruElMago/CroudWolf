@@ -17,15 +17,7 @@ public class PaqueteDeTareas {
 	}
 	
 	//Getters y setters.
-	public void seCompletoElPaquete(){
-
-		
-		if (this.estaCompleto()){
-			
-		
-		this.getProyecto().notificarPaqueteCompleto(this);
-			}
-	}
+	
 	
 
 	public List<Tarea> getTareas() {
@@ -63,6 +55,17 @@ public class PaqueteDeTareas {
 		
 	}
 	
+	
+	//Si el paquete esta completo, notifica al proyecto
+	public void seCompletoElPaquete(){
+
+		
+		if (this.estaCompleto()){
+			
+		
+		this.getProyecto().notificarPaqueteCompleto(this);
+			}
+	}
 	
 	
 	
