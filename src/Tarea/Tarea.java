@@ -4,7 +4,7 @@ import org.joda.time.DateTime;
 import FeedBack.FeedBack;
 public class Tarea {
 	
-	//Atributos
+	//Atributos.
 	
 	String instruccion;
 	boolean disponible;
@@ -23,6 +23,28 @@ public class Tarea {
 	this.setEsObligatoria(false);
 	}
 	
+	
+	//Metodos
+
+
+	public boolean estaCompleta() {  //Pregunta al feedback si se encuentra completo
+		return this.getFeedback().estaCompleta();
+	}
+
+	
+
+	public boolean estaCorrecta() { //Pregunta al feedback si se encuentra Correcto
+		
+		return this.getFeedback().estaCorrecta();
+	}
+
+	
+
+	public boolean estaDisponible() { //Pregunta si es una tarea Disponible
+		
+		return disponible;
+	}
+
 	
 	// Setters y Getters
 	
@@ -83,6 +105,7 @@ public class Tarea {
 
 	
 
+<<<<<<< HEAD
 	//Metodos
 
 
@@ -105,5 +128,7 @@ public class Tarea {
 		
 		return disponible;
 	}
+=======
+>>>>>>> a3051ed7105d1462cb2cc4e18a014db53a11f655
 
 }

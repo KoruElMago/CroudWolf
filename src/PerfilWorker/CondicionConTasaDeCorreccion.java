@@ -7,6 +7,7 @@ import Tarea.Tarea;
 
 public class CondicionConTasaDeCorreccion extends CondicionDelWorker{
 	
+	//Atributos.
 	private int tasaDeCorrecion;
 	
 	

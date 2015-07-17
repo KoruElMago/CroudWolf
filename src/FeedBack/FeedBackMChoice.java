@@ -6,6 +6,7 @@ public class FeedBackMChoice extends FeedBack{
 	
 	//Harcodeado by Koru el Mago
 	
+	//Atributos.
 	private List<RespuestasMChoice> respuestas; 
 	//respuestas validas para esta pregunta
 	

@@ -4,6 +4,7 @@ public abstract class FeedBack {
 
 	//Harcodeado by Koru el Mago
 	
+	//Atributos.
 	private String pregunta;
 	private boolean estaValidada;
 	private boolean estaCorrecta;
@@ -23,16 +24,17 @@ public abstract class FeedBack {
 		return estaValidada;
 	}
 	
+	//Devuelve si el feedBack esta correcto o no.
 	public boolean estaCorrecta(){
 		return estaCorrecta;
 	}
 	
+	//Devuelve si el feedBack esta completo o no.
 	public boolean estaCompleta(){
 		return estaCompleta;
 	}
+	
 	// setters & getters //
-	
-	
 	
 	public String getPregunta() {
 		return pregunta;

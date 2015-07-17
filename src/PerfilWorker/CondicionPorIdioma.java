@@ -4,6 +4,7 @@ import Worker.Worker;
 
 public class CondicionPorIdioma extends CondicionDelWorker{
 	
+	//Atributos.
 	private String idioma;
 	
 	//constructor
