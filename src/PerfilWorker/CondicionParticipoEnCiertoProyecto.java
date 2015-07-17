@@ -5,6 +5,7 @@ import Worker.Worker;
 
 public class CondicionParticipoEnCiertoProyecto extends CondicionDelWorker{
 	
+	//Atributos.
 	private Proyecto proyectoEnElQueTieneQueHaberParticipado;
 	
 	//Constructor
