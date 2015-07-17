@@ -9,6 +9,10 @@ public abstract class FeedBack {
 	private boolean estaCorrecta;
 	private boolean estaCompleta;
 	
+	public FeedBack(){
+		this.setEstaCompleta(false);
+	}
+	
 	//Este estado es como guarda el FeedBack si fue validada y en caso de serlo si fue validado correcta o incorrectamente
 	
 	public abstract void validarse();

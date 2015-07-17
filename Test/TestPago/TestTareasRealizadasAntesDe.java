@@ -1,6 +1,10 @@
 package TestPago;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import org.joda.time.DateTime;
 import org.junit.Before;
@@ -8,8 +12,6 @@ import org.junit.Test;
 
 import Pago.TareasRealizadasAntesDe;
 import Tarea.Tarea;
-
-import static org.mockito.Mockito.*;
 
 public class TestTareasRealizadasAntesDe {
 
@@ -20,7 +22,8 @@ public class TestTareasRealizadasAntesDe {
 	
 	@Before
 	public void setUp(){
-		fecha = new DateTime().now();
+		new DateTime();
+		fecha = DateTime.now();
 		condicionTest = new TareasRealizadasAntesDe((float) 0.3, fecha);
 		mockTarea = mock(Tarea.class);
 	}

@@ -34,8 +34,15 @@ public class TareaTest {
 		assertEquals(tarea1.getInstruccion(), "Apretar Click");
 		assertNotNull(tarea1.getFecha());
 		assertNotNull(tarea1.getFeedback());
+		assertTrue(tarea1.estaDisponible());
+		assertFalse(tarea1.esObligatoria());
 	}
 	
+	@Test
+	public void testMarcarComoObligatoria(){
+		tarea1.marcarComoObligatoria();
+		assertTrue(tarea1.esObligatoria());
+	}
 	
 	@Test
 	public void testTareaCompleta() {

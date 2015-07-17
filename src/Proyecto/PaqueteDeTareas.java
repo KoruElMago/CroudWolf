@@ -2,14 +2,12 @@ package Proyecto;
 
 import java.util.List;
 
-import CroudWolf.CroudWolf;
 import Tarea.Tarea;
 
 public class PaqueteDeTareas {
 	
 	List<Tarea> tareas;
 	Proyecto proyecto;
-	
 
 	public PaqueteDeTareas(Proyecto p, List<Tarea> tareas){
 		this.setProyecto(p);
@@ -23,7 +21,7 @@ public class PaqueteDeTareas {
 				return;
 			}
 		}
-			this.getProyecto().getCroudWolf().notificarPaqueteCompleto(this);
+			this.getProyecto().notificarPaqueteCompleto(this);
 	}
 
 	public List<Tarea> getTareas() {
@@ -43,6 +41,15 @@ public class PaqueteDeTareas {
 	}
 
 	public boolean estaCompleto() {
+		for(Tarea t: this.getTareas()){
+			if(!t.estaCompleta()){
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean pertenceAProyecto(Proyecto proyecto2) {
 		// TODO Auto-generated method stub
 		return false;
 	}

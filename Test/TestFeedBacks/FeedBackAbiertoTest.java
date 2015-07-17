@@ -16,11 +16,13 @@ public class FeedBackAbiertoTest {
 		feedback1= new FeedBackAbierto("Pablito clavo el clavito?");
 		
 	}
-
+	
+	
 	@Test
 	public void testFeedbackAbierto() {
 		assertEquals(feedback1.getPregunta(), "Pablito clavo el clavito?");
 		assertNull(feedback1.getRespuesta());
+		assertFalse(feedback1.estaCompleta());
 	}
 	
 	@Test

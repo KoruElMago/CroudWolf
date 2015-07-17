@@ -80,8 +80,5 @@ public class CroudWolfTest {
 		verify(tema1).notificarWorkers(proyecto1);
 	}
 	
-	@Test
-	public void testNotificarPaqueteCompleto(){
-		
-	}
+
 }
