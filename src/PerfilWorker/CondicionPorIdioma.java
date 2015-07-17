@@ -14,7 +14,11 @@ public class CondicionPorIdioma extends CondicionDelWorker{
 
 	//Retorna un booleano dependiendo del resultado de chequear la condicion por idioma.
 	public boolean chequear(Worker w) {
+<<<<<<< HEAD
 		return w.sabeIdioma(this.getIdioma());
+=======
+		return w.sabeIdioma(this.getIdioma);
+>>>>>>> origin/master
 	}
 	
 	// getters y setters

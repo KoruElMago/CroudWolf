@@ -47,7 +47,11 @@ public class ProyectoTest {
 		listMockTarea.add(mockTarea);
 		mockTemaDeInteres = mock(TemaDeInteres.class);
 		mockWorker = mock(Worker.class);
+<<<<<<< HEAD
 		proyectoT = new Proyecto("nombre que te guste", "alguna estupides", mockCroud, mockPerfil);
+=======
+		proyectoT = new Proyecto("nombre que te guste", "alguna estupides", mockCroud, mockPerfil, mockPago);
+>>>>>>> origin/master
 		mockPaquete = mock(PaqueteDeTareas.class);
 	}
 
@@ -61,6 +65,7 @@ public class ProyectoTest {
 		assertEquals(proyectoT.getTareas().size(), 0);
 		assertEquals(proyectoT.getTemasDeInteres().size(), 0);
 		assertEquals(proyectoT.getSubscriptos().size(), 0);
+		assertNotNull(proyectoT.getPago());
 	}
 	
 	@Test

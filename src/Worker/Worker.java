@@ -147,6 +147,7 @@ public class Worker {
 	public boolean tienePaquete(PaqueteDeTareas paqueteDeTareas) {
 		
 		return this.getPaqueteDeTareas().contains(paqueteDeTareas);
+<<<<<<< HEAD
 	}
 
 	public boolean participoEn(Proyecto proyecto) {
@@ -155,6 +156,8 @@ public class Worker {
 
 	public boolean sabeIdioma(String idioma) {
 		return this.getIdiomas().contains(idioma);
+=======
+>>>>>>> origin/master
 	}
 	
 	
