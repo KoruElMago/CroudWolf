@@ -5,6 +5,7 @@ import Worker.Worker;
 
 public class CondicionNoParticipoEnCiertoProyecto extends CondicionDelWorker{
 	
+	//Atributos.
 	private Proyecto proyectoEnElNoQueTieneQueHaberParticipado;
 	
 	//Constructor
@@ -14,7 +15,7 @@ public class CondicionNoParticipoEnCiertoProyecto extends CondicionDelWorker{
 	
 	//Retorna un booleano dependiendo del resultado de chequear la condicion por no haber participado en un proyecto.
 	public boolean chequear(Worker w){
-		return !(w.getSubscripciones().contains(this.getProyecto()));
+		return !(w.participoEn(this.getProyecto()));
 	}
 	
 	

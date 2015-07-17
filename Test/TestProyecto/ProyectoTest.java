@@ -1,17 +1,20 @@
 package TestProyecto;
 
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.internal.matchers.Any;
 
-import static org.mockito.Mockito.*;
 import CroudWolf.CroudWolf;
 import CroudWolf.TemaDeInteres;
+import Pago.Pago;
 import PerfilWorker.PerfilDelWorker;
 import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
@@ -29,6 +32,8 @@ public class ProyectoTest {
 	List<Tarea> listMockTarea;
 	TemaDeInteres mockTemaDeInteres;
 	Worker mockWorker;
+	PaqueteDeTareas mockPaquete;
+	Pago mockPago;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -37,11 +42,13 @@ public class ProyectoTest {
 		mockTarea = mock(Tarea.class);
 		mockTarea2 = mock(Tarea.class);
 		mockTarea3 = mock(Tarea.class);
+		mockPago = mock(Pago.class);
 		listMockTarea = new ArrayList<Tarea>();
 		listMockTarea.add(mockTarea);
 		mockTemaDeInteres = mock(TemaDeInteres.class);
 		mockWorker = mock(Worker.class);
 		proyectoT = new Proyecto("nombre que te guste", "alguna estupides", mockCroud, mockPerfil);
+		mockPaquete = mock(PaqueteDeTareas.class);
 	}
 
 	@Test
@@ -134,5 +141,28 @@ public class ProyectoTest {
 	public void testAgregarSubscripto(){
 		proyectoT.agregarSubscripto(mockWorker);
 		assertTrue(proyectoT.getSubscriptos().contains(mockWorker));
+	}
+	
+	
+	@Test
+	public void testGetWorkerEncargado(){
+		when(mockWorker.tienePaquete(mockPaquete)).thenReturn(true);
+		proyectoT.agregarSubscripto(mockWorker);
+		assertNotNull(proyectoT.getWorkerEncargado(mockPaquete));
+		when(mockWorker.tienePaquete(mockPaquete)).thenReturn(false);
+		assertNull(proyectoT.getWorkerEncargado(mockPaquete));
+	}
+	
+	@Test
+	public void testNotificarPaqueteCompleto(){
+		
+		
+	}
+	
+	@Test
+	
+	public void testPerteneceAPaquete(){
+		
+		
 	}
 }

@@ -202,5 +202,26 @@ public class Proyecto {
 	public void setCroudWolf(CroudWolf cw){
 		croudWolf = cw;
 	}
+
+
+
+	public Worker getWorkerEncargado(PaqueteDeTareas paqueteDeTareas) {
+		
+		for(Worker w : this.getSubscriptos()){
+			if(w.tienePaquete(paqueteDeTareas)){
+				return w;
+			}
+		}
+		
+		return null;
+	}
+
+
+
+	public void notificarPaqueteCompleto(PaqueteDeTareas paqueteDeTareas) {
+		
+		this.getWorkerEncargado(paqueteDeTareas).recibePago(this.getPago());
+	}
+	
 	
 }

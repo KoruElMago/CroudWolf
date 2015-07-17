@@ -117,25 +117,18 @@ public class Worker {
 	}
 
 	public void asignarPaqueteDeTareas(PaqueteDeTareas proximoPaqueteDeTareas) {
-		for(PaqueteDeTareas t: this.select(tareas, proximoPaqueteDeTareas.getProyecto())){
-			if(!t.estaCompleto()){
-				return;
+		for(PaqueteDeTareas t: this.getPaqueteDeTareas()){
+			if(t.pertenceAProyecto(proximoPaqueteDeTareas.getProyecto())){
+				if(!t.estaCompleto()){
+					return;
+				}
 			}
 		}
 		tareas.add(proximoPaqueteDeTareas);
-		
 	}
 
-	//private
-	public List<PaqueteDeTareas> select(List<PaqueteDeTareas> tareas2, Proyecto proyecto) {
-		List<PaqueteDeTareas> ls = new ArrayList<PaqueteDeTareas>();
-		for (PaqueteDeTareas p: tareas2){
-			if(p.getProyecto().equals(proyecto)){
-				ls.add(p);
-			}		
-		}
-		return ls;
-	}
+	
+
 
 	public List<PaqueteDeTareas> getPaqueteDeTareas() {
 		
@@ -144,7 +137,24 @@ public class Worker {
 
 	public void recibePago(Pago pago) {
 		
-		this.getPagos().add(pago);
+		if(!this.getPagos().contains(pago)){
+			
+			this.getPagos().add(pago);
+		
+		}
+	}
+
+	public boolean tienePaquete(PaqueteDeTareas paqueteDeTareas) {
+		
+		return this.getPaqueteDeTareas().contains(paqueteDeTareas);
+	}
+
+	public boolean participoEn(Proyecto proyecto) {
+		return this.getSubscripciones().contains(proyecto);
+	}
+
+	public boolean sabeIdioma(String idioma) {
+		return this.getIdiomas().contains(idioma);
 	}
 	
 	

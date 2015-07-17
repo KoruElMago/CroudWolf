@@ -7,7 +7,9 @@ import Tarea.Tarea;
 
 public class CondicionConTasaDeCorreccion extends CondicionDelWorker{
 	
+	//Atributos.
 	private int tasaDeCorrecion;
+	//Es un numero que indica el porcentaje que debe de tener un worker en su tasa de correccion.
 	
 	
 	//Constructor

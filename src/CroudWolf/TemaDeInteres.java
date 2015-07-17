@@ -8,6 +8,7 @@ import Worker.Worker;
 
 public class TemaDeInteres {
 	
+	//Atributos.
 	private List<Worker> workers;
 	private String tema;
 	
@@ -17,12 +18,14 @@ public class TemaDeInteres {
 		this.setTema(t);
 	}
 	
+	//Notifica a un worker sobre un proyecto.
 	public void notificarWorkers(Proyecto p) {
 		for (Worker w: this.getWorkers()){
 			w.notificarProyecto(p);
 		}
 	}
 
+	//Agrega un worker al croudWolf
 	public void agregarWorker(Worker w){
 		this.getWorkers().add(w);
 	}

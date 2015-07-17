@@ -6,6 +6,7 @@ import Worker.Worker;
 
 public class PerfilDelWorker {
 	
+	//Atributos.
 	private List<CondicionDelWorker> condiciones;
 	
 	//constructor

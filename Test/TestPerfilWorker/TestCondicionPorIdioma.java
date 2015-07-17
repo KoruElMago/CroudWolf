@@ -27,13 +27,13 @@ import static org.mockito.Mockito.*;
 	 
 	 @Test
 	 public void testCreador(){
-		 assertTrue(condicion.getIdiomas().contains("Español"));
+		 assertTrue(condicion.getIdioma().contains("Español"));
 	 }
 	 
 	 @Test
 	 public void testChequear(){
 		 condicion.chequear(mockWorker);
-		 verify(mockWorker).getIdiomas();
+		 verify(mockWorker).sabeIdioma(idioma);
 	 }
  }
 	 

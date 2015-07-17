@@ -33,7 +33,7 @@ import Worker.Worker;
 	 @Test
 	 public void testChequear(){
 		 condicion.chequear(mockWorker);
-		 verify(mockWorker).getSubscripciones();
+		 verify(mockWorker).participoEn(mockProyecto);
 	 }
  }
 		 

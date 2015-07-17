@@ -4,12 +4,13 @@ import org.joda.time.DateTime;
 import FeedBack.FeedBack;
 public class Tarea {
 	
-	//Atributos
+	//Atributos.
 	
 	String instruccion;
 	boolean disponible;
 	FeedBack feedback;
 	DateTime fecha;
+	boolean esObligatoria;
 	
 	//Constructor
 	
@@ -19,8 +20,11 @@ public class Tarea {
 	this.setInstruccion(instruccion);
 	this.setFeedback(feedback);
 	this.setFecha(new DateTime());
+	this.setEsObligatoria(false);
 	}
 	
+	
+
 	
 	// Setters y Getters
 	
@@ -36,6 +40,17 @@ public class Tarea {
 
 
 
+	
+
+	public boolean esObligatoria() {
+		return esObligatoria;
+	}
+
+
+	private void setEsObligatoria(boolean esObligatoria) {
+		this.esObligatoria = esObligatoria;
+	}
+
 
 	public FeedBack getFeedback() {
 		return feedback;
@@ -49,11 +64,6 @@ public class Tarea {
 	}
 
 
-
-
-	public boolean isDisponible() {
-		return disponible;
-	}
 
 
 	public void setDisponible(boolean disponible) {
@@ -75,6 +85,7 @@ public class Tarea {
 
 	
 
+
 	//Metodos
 
 
@@ -89,7 +100,9 @@ public class Tarea {
 		return this.getFeedback().estaCorrecta();
 	}
 
-	
+	public void marcarComoObligatoria(){
+		this.setEsObligatoria(true);
+	}
 
 	public boolean estaDisponible() { //Pregunta si es una tarea Disponible
 		

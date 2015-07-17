@@ -96,22 +96,8 @@ public class CroudWolf {
 		}
 	}
 	
-	// Cuando un paquete de tareas se termina, tiene que pagarse.
 
-	public void notificarPaqueteCompleto(PaqueteDeTareas paqueteDeTareas) {
-		
-		for(Worker w :paqueteDeTareas.getProyecto().getSubscriptos()){
-			
-			
-			if(w.getPaqueteDeTareas().contains(paqueteDeTareas)){
-				
-				w.recibePago(paqueteDeTareas.getProyecto().getPago());
-				return;
-			}
-		}
-		
-		
-	}
+
 	
 	
 	

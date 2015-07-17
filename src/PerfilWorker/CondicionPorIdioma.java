@@ -4,6 +4,7 @@ import Worker.Worker;
 
 public class CondicionPorIdioma extends CondicionDelWorker{
 	
+	//Atributos.
 	private String idioma;
 	
 	//constructor
@@ -13,7 +14,7 @@ public class CondicionPorIdioma extends CondicionDelWorker{
 
 	//Retorna un booleano dependiendo del resultado de chequear la condicion por idioma.
 	public boolean chequear(Worker w) {
-		return w.getIdiomas().contains(idioma);
+		return w.sabeIdioma(this.getIdioma());
 	}
 	
 	// getters y setters
@@ -21,7 +22,7 @@ public class CondicionPorIdioma extends CondicionDelWorker{
 		idioma = idioma1;
 	}
 	
-	public String getIdiomas(){
+	public String getIdioma(){
 		return idioma;
 	}
 }

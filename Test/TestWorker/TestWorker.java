@@ -21,6 +21,7 @@ public class TestWorker {
 	Pago pago1;
 	Worker worker1;
 	PaqueteDeTareas paquete1;
+	PaqueteDeTareas paquete2;
 	Proyecto 	proyecto1;
 	List<String> idiomas;
 
@@ -37,6 +38,7 @@ public class TestWorker {
 		worker1 = new Worker("Mago",55 ,idiomas);
 		proyecto1 = mock(Proyecto.class);
 		paquete1 = mock(PaqueteDeTareas.class);
+		paquete2 = mock(PaqueteDeTareas.class);
 		pago1 = mock(Pago.class);
 		paq = new ArrayList<PaqueteDeTareas>();
 		paq.add(paquete1);
@@ -90,10 +92,18 @@ public class TestWorker {
 	
 	@Test 
 	public void testAsignarPaqueteTareas(){
+		when(paquete1.estaCompleto()).thenReturn(false);
+		
+		when(paquete2.getProyecto()).thenReturn(proyecto1);
+		
+		when(paquete1.pertenceAProyecto(proyecto1)).thenReturn(true);
+		
 		worker1.asignarPaqueteDeTareas(paquete1);
 		
+		worker1.asignarPaqueteDeTareas(paquete2);
 		
 	}
+	
 	@Test
 	public void testNotificarProyecto(){
 		worker1.notificarProyecto(proyecto1);
@@ -101,5 +111,10 @@ public class TestWorker {
 		assertEquals(worker1.getPosiblesProyectos().size(),1);
 	}
 	
-
+	@Test
+	public void testTienePaquete(){
+		worker1.asignarPaqueteDeTareas(paquete1);
+		assertTrue(worker1.tienePaquete(paquete1));
+	}
+	
 }
