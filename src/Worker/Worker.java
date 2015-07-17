@@ -108,14 +108,17 @@ public class Worker {
 
 	//Metodos
 	
+	//Agrega un idioma al worker.
 	public void agregarIdioma(String s){
 		this.getIdiomas().add(s);
 	}
 	
+	//Recibe una notificacion de un proyecto dado por parametro.
 	public void notificarProyecto(Proyecto p){
 		this.getPosiblesProyectos().add(p);
 	}
 
+	//Se le asigna al worker el proximo paquete de tareas si esque puede recibirlo.
 	public void asignarPaqueteDeTareas(PaqueteDeTareas proximoPaqueteDeTareas) {
 		for(PaqueteDeTareas t: this.getPaqueteDeTareas()){
 			if(t.pertenceAProyecto(proximoPaqueteDeTareas.getProyecto())){
@@ -135,6 +138,7 @@ public class Worker {
 		return tareas;
 	}
 
+	//El worker recibe un pago.
 	public void recibePago(Pago pago) {
 		
 		if(!this.getPagos().contains(pago)){
@@ -143,17 +147,20 @@ public class Worker {
 		
 		}
 	}
-
+	
+	//Retorna un boolean dependiendo si el worker tiene el paquete de tareas dado por parametro.
 	public boolean tienePaquete(PaqueteDeTareas paqueteDeTareas) {
 		
 		return this.getPaqueteDeTareas().contains(paqueteDeTareas);
 <<<<<<< HEAD
 	}
 
+	//Retorna un boolean indicando si el worker participo en el proyecto dado por parametro.
 	public boolean participoEn(Proyecto proyecto) {
 		return this.getSubscripciones().contains(proyecto);
 	}
 
+	//Retorna un boolean indicando si el worker sabe el idioma dado por parametro.
 	public boolean sabeIdioma(String idioma) {
 		return this.getIdiomas().contains(idioma);
 =======
