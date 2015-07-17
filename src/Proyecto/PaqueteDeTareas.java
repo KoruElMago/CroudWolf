@@ -14,15 +14,16 @@ public class PaqueteDeTareas {
 		this.setTareas(tareas);
 	}
 	
-	public void completarTarea(){
+	public void seCompletoElPaquete(){
 
-		for(Tarea t  : this.getTareas()){
-			if (! t.estaCompleta()){
-				return;
+		
+		if (this.estaCompleto()){
+			
+		
+		this.getProyecto().notificarPaqueteCompleto(this);
 			}
-		}
-			this.getProyecto().notificarPaqueteCompleto(this);
 	}
+	
 
 	public List<Tarea> getTareas() {
 		return tareas;
@@ -50,8 +51,9 @@ public class PaqueteDeTareas {
 	}
 
 	public boolean pertenceAProyecto(Proyecto proyecto2) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		return proyecto2.equals(this.getProyecto());
+		
 	}
 	
 	

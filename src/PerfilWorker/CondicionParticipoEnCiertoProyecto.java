@@ -15,7 +15,7 @@ public class CondicionParticipoEnCiertoProyecto extends CondicionDelWorker{
 	
 	//Retorna un booleano dependiendo del resultado de chequear la condicion por haber partidipado en cierto proyecto.
 	public boolean chequear(Worker w){
-		return (w.getSubscripciones().contains(this.getProyecto()));
+		return (w.participoEn(this.getProyecto()));
 	}
 	
 	
