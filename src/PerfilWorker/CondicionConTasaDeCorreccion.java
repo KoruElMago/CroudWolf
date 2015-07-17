@@ -22,6 +22,7 @@ public class CondicionConTasaDeCorreccion extends CondicionDelWorker{
 		return this.fijarseTasaDeCorrecion(w.getTareas());
 	}
 	
+	//Retorna un booleano indicando si pasa la tasa de correccion con la lista de tareas dadas.
 	public boolean fijarseTasaDeCorrecion(List<Tarea> t){
 		int tareasCorrectas = 0;
 		for(Tarea t1 : t){
