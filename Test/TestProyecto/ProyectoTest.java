@@ -14,6 +14,7 @@ import org.junit.Test;
 
 import CroudWolf.CroudWolf;
 import CroudWolf.TemaDeInteres;
+import Pago.Pago;
 import PerfilWorker.PerfilDelWorker;
 import Proyecto.PaqueteDeTareas;
 import Proyecto.Proyecto;
@@ -32,6 +33,7 @@ public class ProyectoTest {
 	TemaDeInteres mockTemaDeInteres;
 	Worker mockWorker;
 	PaqueteDeTareas mockPaquete;
+	Pago mockPago;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -40,11 +42,12 @@ public class ProyectoTest {
 		mockTarea = mock(Tarea.class);
 		mockTarea2 = mock(Tarea.class);
 		mockTarea3 = mock(Tarea.class);
+		mockPago = mock(Pago.class);
 		listMockTarea = new ArrayList<Tarea>();
 		listMockTarea.add(mockTarea);
 		mockTemaDeInteres = mock(TemaDeInteres.class);
 		mockWorker = mock(Worker.class);
-		proyectoT = new Proyecto("nombre que te guste", "alguna estupides", mockCroud, mockPerfil);
+		proyectoT = new Proyecto("nombre que te guste", "alguna estupides", mockCroud, mockPerfil, mockPago);
 		mockPaquete = mock(PaqueteDeTareas.class);
 	}
 
@@ -58,6 +61,7 @@ public class ProyectoTest {
 		assertEquals(proyectoT.getTareas().size(), 0);
 		assertEquals(proyectoT.getTemasDeInteres().size(), 0);
 		assertEquals(proyectoT.getSubscriptos().size(), 0);
+		assertNotNull(proyectoT.getPago());
 	}
 	
 	@Test
@@ -152,6 +156,13 @@ public class ProyectoTest {
 	
 	@Test
 	public void testNotificarPaqueteCompleto(){
+		
+		
+	}
+	
+	@Test
+	
+	public void testPerteneceAPaquete(){
 		
 		
 	}
